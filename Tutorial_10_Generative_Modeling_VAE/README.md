@@ -1,57 +1,16 @@
-# Generative Modeling: Autoencoders and Variational Autoencoders (VAEs)
+# Tutorial 10 Autoencoders and VAEs
 
-Autoencoders and Variational Autoencoders (VAEs) are neural network architectures widely used in generative modeling tasks, including image generation, data compression, and feature learning. These models are designed to learn and generate data by capturing meaningful representations of the input.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PEESEgroup/SysEn6888/blob/main/Tutorial_10_Generative_Modeling_VAE/tutorial_10_pytorch.ipynb)
 
-## Autoencoder
+Self-contained PyTorch reconstruction, denoising, ECG anomaly scoring, convolutional VAE generation, and a small adversarial autoencoder demonstration.
 
-An autoencoder is a type of neural network with two main components: an encoder and a decoder. Its primary goal is to learn a compressed representation (latent space) of the input data while maintaining the ability to reconstruct the input.
+- Installs missing packages and downloads Fashion-MNIST, MNIST, and the ECG CSV automatically (~50 MB). No local environment, TensorFlow, API key, or Drive mount.
+- Quick mode: Fashion 4,000/800/1,000 images; MNIST 6,000/1,000/1,000 images; four AE/denoising epochs, 50 ECG epochs, six VAE epochs, and two AAE epochs on 2,000 images.
+- Ten figures show data, reconstruction/denoising, ECG results, VAE losses, prior generation, posterior/latent grids, interpolation, and AAE samples. A fixed-prior GIF shows training progress.
+- Validation selects checkpoints and calibrates the ECG threshold. The test set does not select epochs or thresholds. ECG positive class is anomaly (CSV label 0).
+- CPU reload checks cover all five models. VAE KL/reparameterization and AAE shared-encoder/update-isolation checks are included.
+- GPU/larger mode and `RUN_AAE=False` require separate validation. ECG is a row-level educational example, not a clinical diagnostic system; quick generative runs are not quality benchmarks.
 
-- **Encoder**: Maps the input data to a lower-dimensional representation (latent space).  
-- **Decoder**: Reconstructs the input from the encoded representation.  
-- **Training Objective**: The training process minimizes reconstruction error, often using loss functions like mean squared error (MSE). This enables the network to identify essential features and patterns, effectively compressing the data into its latent space.
+Outputs in `outputs/tutorial_10/` include figures, GIF, checkpoints, ECG predictions, and metrics.
 
-Once trained, the decoder can generate data by sampling from the latent space, making autoencoders useful for representation learning and data reconstruction.
-
-## Variational Autoencoder (VAE)
-
-A VAE extends the autoencoder by introducing probabilistic concepts, making it more suitable for generative modeling tasks. It learns not only a latent representation but also the uncertainty associated with it.
-
-- **Encoder**: Maps input data to a probability distribution in the latent space, typically outputting the mean and variance of a multivariate Gaussian distribution.  
-- **Decoder**: Generates data points from a sample drawn from the latent space.  
-
-### Training Objectives:
-1. **Reconstruction Loss**: Similar to autoencoders, it measures how well the input is reconstructed.  
-2. **Regularization Loss (KL Divergence)**: Ensures the distribution in the latent space matches a standard Gaussian distribution.
-
-The combined losses encourage the VAE to learn a structured and smooth latent space, making it easier to generate novel data points by sampling from the learned distribution.
-
-### Key Difference:
-- Autoencoders produce a deterministic latent representation for reconstruction.  
-- VAEs learn a probabilistic latent space, enabling them to generate new data samples and capture data uncertainty effectively.
-
-## Modern Autoencoders
-
-Autoencoders have evolved significantly from their traditional applications in dimensionality reduction and feature learning. Modern autoencoders generalize the encoding and decoding processes using stochastic mappings, such as \( p_{\text{encoder}}(h | x) \) and \( p_{\text{decoder}}(x | h) \). This connection to latent variable models has elevated autoencoders as a cornerstone in generative modeling.
-
-### Characteristics:
-- Autoencoders are trained to approximate \( g(f(x)) \approx x \), focusing only on aspects of the input that resemble the training data.  
-- This constraint helps the model prioritize useful properties of the data, making it highly effective for feature extraction.
-
-Training is typically performed using techniques like minibatch gradient descent and backpropagation.
-
-## Examples and Applications
-
-In this tutorial, we will explore autoencoders and VAEs through the following steps:
-1. **Autoencoders**:
-   - Basic autoencoder concepts.
-   - Image denoising.
-   - Anomaly detection.
-2. **Variational Autoencoder (VAE)**:
-   - Introduction to VAEs.
-   - Practical implementation of VAEs for generative modeling.
-
-## Acknowledgments
-- François Chollet
-- Tensorflow.org
-- pytorch.org
-
+[Series index](../README.md) · [Validation evidence](../docs/validation.md).

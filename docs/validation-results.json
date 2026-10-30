@@ -1,0 +1,1766 @@
+{
+  "date": "2026-10-26",
+  "method": "Tutorials 01-04, 06, 07, 08, 09, 10, 11, 12, 13, 14, and 15: sequential exact-source code-cell execution in Colab using native run_cell. Tutorial 05: full notebook Run all in a fresh Colab CPU runtime; see per-tutorial method. Expanded Tutorial 02: full uploaded notebook Run all in a new Colab CPU runtime on 2026-10-26.",
+  "tutorials": {
+    "01": {
+      "code_sha256": "86ab29f78aa832219f3eb835864bb333f235267928bf708dfa4d6715f6fce601",
+      "code_cells": 8,
+      "status": "passed",
+      "summary": {
+        "count": 5,
+        "mean_kwh": 11,
+        "total_kwh": 55,
+        "minimum_kwh": 8.5,
+        "maximum_kwh": 14,
+        "above_target_count": 2,
+        "target_kwh": 11,
+        "data_status": "synthetic teaching example"
+      }
+    },
+    "02": {
+      "date": "2026-10-26",
+      "code_sha256": "292438a551a72022733b6c5590cd78a00af6aac1ba63a9f07f91cbb8a63517c8",
+      "code_cells": 24,
+      "status": "passed",
+      "method": "Full local notebook uploaded to Google Colab; Run all in a new CPU runtime. Execution counts 1 through 24 and final completion marker observed in browser.",
+      "metrics": {
+        "versions": {
+          "python": "3.13.16",
+          "numpy": "2.1.3",
+          "pandas": "2.2.3",
+          "matplotlib": "3.10.0",
+          "seaborn": "0.13.2",
+          "plotly": "5.24.1"
+        },
+        "audit": {
+          "raw_rows": 13,
+          "duplicates_removed": 1,
+          "invalid_energy_marked_missing": 1,
+          "missing_rows_removed": 2,
+          "clean_rows": 10
+        },
+        "total_energy_kwh": 222.0,
+        "energy_data_synthetic": true,
+        "tips_rows": 244,
+        "mapped_counties": 3217,
+        "unmatched_counties": [
+          "02158",
+          "46102"
+        ],
+        "compared_color_names": 49,
+        "sources": {
+          "tips": {
+            "url": "https://raw.githubusercontent.com/mwaskom/seaborn-data/master/tips.csv",
+            "sha256": "e54cc4d2ce1bff65d32ca60b3e4b802e06bde1d7e7caf6f796f6bf7370e863b0",
+            "bytes": 9729
+          },
+          "counties": {
+            "url": "https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json",
+            "sha256": "e540149b7525e71ee6b6cab6dea2a95205f11e0c3e7374d27a7c9c47ea96e8c0",
+            "bytes": 3216816
+          },
+          "unemployment": {
+            "url": "https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv",
+            "sha256": "1e532fdfaf33d7a5ae34b5a84debdca80a136acf539a25078a38a9a218d7623a",
+            "bytes": 32336
+          }
+        },
+        "verified_outputs": [
+          "energy_overview.png",
+          "interactive_energy.html",
+          "clean_energy.csv",
+          "site_summary.csv",
+          "pyplot_subplots.png",
+          "axes_inset.png",
+          "named_colors.png",
+          "named_color_comparison.csv",
+          "line_styles.png",
+          "text_annotations.png",
+          "tips_relational.png",
+          "tips_distribution.png",
+          "tips_swarm.png",
+          "tips_violin.png",
+          "tips_bar.png",
+          "county_unemployment.html",
+          "mapped_unemployment.csv"
+        ]
+      },
+      "visual_checks": "12 static figures and both interactive Plotly charts inspected; county and energy hover labels observed.",
+      "limitations": "Executed notebook download via browser automation timed out. Uploaded file and browser output are the validation evidence. Two unmatched county identifiers are reported and omitted. Missing-package installation branch was not exercised because all packages were present.",
+      "previous_validation": {
+        "code_sha256": "77311209a978d1d9e87970399fe9fb27dd65008144703c9f851be2ba3d931967",
+        "code_cells": 9,
+        "status": "passed",
+        "metrics": {
+          "versions": {
+            "python": "3.13.16",
+            "numpy": "2.1.3",
+            "pandas": "2.2.3",
+            "matplotlib": "3.10.0",
+            "seaborn": "0.13.2",
+            "plotly": "5.24.1"
+          },
+          "audit": {
+            "raw_rows": 13,
+            "duplicates_removed": 1,
+            "invalid_energy_marked_missing": 1,
+            "missing_rows_removed": 2,
+            "clean_rows": 10
+          },
+          "total_energy_kwh": 222,
+          "synthetic": true
+        }
+      }
+    },
+    "04": {
+      "code_sha256": "de3f89cf31f6a527b39e38d32690fbab2db4e0ac0a4864b889e0172a70744c47",
+      "code_cells": 10,
+      "status": "passed",
+      "metrics": {
+        "environment": {
+          "python": "3.13.16",
+          "torch": "2.11.0+cpu",
+          "torchvision": "0.26.0+cpu",
+          "numpy": "2.1.3",
+          "pandas": "2.2.3",
+          "matplotlib": "3.10.0",
+          "device": "cpu",
+          "seed": 42,
+          "quick_run": true
+        },
+        "mnist": {
+          "splits": [
+            6000,
+            1000,
+            2000
+          ],
+          "validation": {
+            "Dense": {
+              "loss": 0.4313398551940918,
+              "accuracy": 0.87
+            },
+            "CNN": {
+              "loss": 0.28034611082077027,
+              "accuracy": 0.906
+            }
+          },
+          "test": {
+            "Dense": {
+              "loss": 0.4243982253074646,
+              "accuracy": 0.884
+            },
+            "CNN": {
+              "loss": 0.25902697467803953,
+              "accuracy": 0.922
+            }
+          },
+          "selected": "CNN",
+          "best_epochs": {
+            "Dense": 3,
+            "CNN": 3
+          }
+        },
+        "cifar10": {
+          "splits": [
+            4000,
+            1000,
+            2000
+          ],
+          "validation": {
+            "Plain": {
+              "loss": 1.6417910900115966,
+              "accuracy": 0.394
+            },
+            "Regularized": {
+              "loss": 1.6934449939727783,
+              "accuracy": 0.388
+            },
+            "Regularized + augmentation": {
+              "loss": 1.8246670627593995,
+              "accuracy": 0.352
+            }
+          },
+          "test": {
+            "Plain": {
+              "loss": 1.5675920810699462,
+              "accuracy": 0.4465
+            },
+            "Regularized": {
+              "loss": 1.6266709756851196,
+              "accuracy": 0.4395
+            },
+            "Regularized + augmentation": {
+              "loss": 1.7729682989120483,
+              "accuracy": 0.3715
+            }
+          },
+          "selected": "Plain",
+          "baseline_accuracy": 0.10199999809265137,
+          "best_epochs": {
+            "Plain": 3,
+            "Regularized": 3,
+            "Regularized + augmentation": 3
+          }
+        },
+        "elapsed_seconds": 1354.89
+      }
+    },
+    "03": {
+      "code_sha256": "da050d6c57300e4765a1bed970f0cb46519c91b15fbc6a92fd7408f2e941be18",
+      "code_cells": 17,
+      "status": "passed",
+      "metrics": {
+        "environment": {
+          "python": "3.13.16",
+          "torch": "2.11.0+cpu",
+          "torchvision": "0.26.0+cpu",
+          "numpy": "2.1.3",
+          "pandas": "2.2.3",
+          "matplotlib": "3.10.0",
+          "device": "cpu",
+          "quick_run": true,
+          "seed": 42
+        },
+        "data": {
+          "auto_mpg_sha256": "48b830e11feee5572525f8f1691ddb9d38d3d7b7063edcd8fca672c2a5e17d8d",
+          "fashion_mnist_revision": "b2617bb6d3ffa2e429640350f613e3291e10b141"
+        },
+        "regression": {
+          "split_sizes": [
+            274,
+            58,
+            60
+          ],
+          "validation": {
+            "Training-mean baseline": {
+              "MAE (MPG)": 6.896740913391113,
+              "RMSE (MPG)": 7.880924703225393
+            },
+            "Linear": {
+              "MAE (MPG)": 2.1698622703552246,
+              "RMSE (MPG)": 2.8020339012145996
+            },
+            "MLP": {
+              "MAE (MPG)": 1.5802069902420044,
+              "RMSE (MPG)": 2.2257308959960938
+            }
+          },
+          "test": {
+            "Training-mean baseline": {
+              "MAE (MPG)": 6.062518246968588,
+              "RMSE (MPG)": 7.432080737281
+            },
+            "Linear": {
+              "MAE (MPG)": 2.609381675720215,
+              "RMSE (MPG)": 3.6744327545166016
+            },
+            "MLP": {
+              "MAE (MPG)": 1.9166748523712158,
+              "RMSE (MPG)": 2.6375837326049805
+            }
+          },
+          "selected_by_validation": "MLP",
+          "best_epochs": {
+            "Linear": 12,
+            "MLP": 109
+          }
+        },
+        "classification": {
+          "split_sizes": [
+            6000,
+            1000,
+            2000
+          ],
+          "validation_accuracy": 0.8420000076293945,
+          "test_accuracy": 0.8174999952316284,
+          "baseline_accuracy": 0.10000000149011612,
+          "best_epoch": 5
+        },
+        "elapsed_seconds_excluding_setup": 10.72
+      }
+    },
+    "05": {
+      "code_sha256": "75f5ef083549c26dee5c93ea9e1823a2a8bf4cbf7b38e14f60a6dd4c307876bd",
+      "code_cells": 16,
+      "status": "passed",
+      "metrics": {
+        "environment": {
+          "python": "3.13.16",
+          "torch": "2.11.0+cpu",
+          "torchvision": "0.26.0+cpu",
+          "numpy": "2.1.3",
+          "pandas": "2.2.3",
+          "matplotlib": "3.10.0",
+          "device": "cpu",
+          "seed": 42,
+          "quick_run": true
+        },
+        "data_url": "https://download.pytorch.org/tutorial/hymenoptera_data.zip",
+        "archive_sha256": "fbc41b31d544714d18dd1230b1e2b455e1557766e13e67f9f5a7a23af7c02209",
+        "splits": [
+          200,
+          60,
+          60
+        ],
+        "validation": {
+          "loss": 0.10051099210977554,
+          "accuracy": 0.95
+        },
+        "test": {
+          "loss": 0.15127794444561005,
+          "accuracy": 0.9333333333333333
+        },
+        "baseline_accuracy": 0.5,
+        "best_epoch": 18,
+        "gradcam": {
+          "ants": {
+            "min": 0.0,
+            "max": 1.0,
+            "mean": 0.14046154916286469
+          },
+          "bees": {
+            "min": 0.0,
+            "max": 1.0,
+            "mean": 0.11973156034946442
+          }
+        },
+        "checkpoint_roundtrip": true,
+        "style_transfer": {
+          "executed": false
+        },
+        "vit_patch_shape": [
+          1,
+          16,
+          192
+        ],
+        "vit_tokenization": {
+          "image_shape": [
+            1,
+            3,
+            32,
+            32
+          ],
+          "patch_shape": [
+            1,
+            16,
+            192
+          ],
+          "embedding_shape": [
+            1,
+            16,
+            64
+          ],
+          "positioned_shape": [
+            1,
+            17,
+            64
+          ],
+          "attention_shape": [
+            1,
+            4,
+            17,
+            17
+          ],
+          "reconstruction_max_error": 0.0,
+          "projection_equivalence": true,
+          "forward_equivalence": true,
+          "attention_rows_sum_to_one": true,
+          "trained": false,
+          "patch_sizes": [
+            {
+              "patch_side_pixels": 4,
+              "patch_tokens": 64,
+              "pixels_per_patch_vector": 48,
+              "sequence_including_cls": 65,
+              "attention_entries_per_head": 4225
+            },
+            {
+              "patch_side_pixels": 8,
+              "patch_tokens": 16,
+              "pixels_per_patch_vector": 192,
+              "sequence_including_cls": 17,
+              "attention_entries_per_head": 289
+            },
+            {
+              "patch_side_pixels": 16,
+              "patch_tokens": 4,
+              "pixels_per_patch_vector": 768,
+              "sequence_including_cls": 5,
+              "attention_entries_per_head": 25
+            }
+          ]
+        },
+        "elapsed_seconds": 35.15
+      },
+      "optional_style_check": {
+        "executed": true,
+        "steps": 40,
+        "first_loss": 454754.125,
+        "last_loss": 35324.15234375
+      },
+      "previous_code_sha256": "2f2269125ca88a562263da59160363dce7e2d2f91fa64310ad4487d0d326a6d1",
+      "method": "Direct GitHub commit e0fde9f23c7c8c9b622e30fc16d08f8f47078d3e opened in Colab; fresh CPU runtime; Run all; downloaded executed notebook confirms all 16 cells executed without errors and exact source match.",
+      "published_code_sha256": "04d1e3d2c74552cb45e4fd8f2b791331604e7e2d8dc42214fccbc59c6f2ca5dc",
+      "post_validation_change": "Only patch-sequence figure height/layout was adjusted after visual review to separate titles; computational code unchanged. The executed code hash remains recorded in code_sha256."
+    },
+    "06": {
+      "code_sha256": "ed7fe9b968ce8b558e028c289f94baa415fb6b78d7ca57300f0edd633c11a0b8",
+      "code_cells": 14,
+      "status": "passed",
+      "method": "Exact published code-cell sources executed sequentially using native Colab run_cell in a fresh CPU runtime. Downloaded verification notebook confirms exact source equality, ALL_14_CELLS_PASSED, and no error outputs. Four output figures visually inspected. This does not test direct GitHub authorization or full notebook import.",
+      "metrics": {
+        "environment": {
+          "python": "3.13.16",
+          "torch": "2.11.0+cpu",
+          "torchvision": "0.26.0+cpu",
+          "numpy": "2.1.3",
+          "pandas": "2.2.3",
+          "matplotlib": "3.10.0",
+          "device": "cpu",
+          "seed": 42,
+          "quick_run": true
+        },
+        "data_url": "https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz",
+        "archive_sha256": "4c54ace7911aaffe13a365c34f650e71dd5bf1be0a58b464e5a7183e3e595d9c",
+        "class_names": [
+          "daisy",
+          "dandelion",
+          "roses",
+          "sunflowers",
+          "tulips"
+        ],
+        "splits": [
+          200,
+          50,
+          50
+        ],
+        "class_counts": [
+          {
+            "class": "daisy",
+            "available": 633,
+            "train": 40,
+            "validation": 10,
+            "test": 10
+          },
+          {
+            "class": "dandelion",
+            "available": 898,
+            "train": 40,
+            "validation": 10,
+            "test": 10
+          },
+          {
+            "class": "roses",
+            "available": 641,
+            "train": 40,
+            "validation": 10,
+            "test": 10
+          },
+          {
+            "class": "sunflowers",
+            "available": 699,
+            "train": 40,
+            "validation": 10,
+            "test": 10
+          },
+          {
+            "class": "tulips",
+            "available": 799,
+            "train": 40,
+            "validation": 10,
+            "test": 10
+          }
+        ],
+        "parameters": {
+          "frozen_stage": {
+            "total": 2230277,
+            "trainable": 6405,
+            "frozen": 2223872
+          },
+          "fine_tune_stage": {
+            "total": 2230277,
+            "trainable": 892485,
+            "frozen": 1337792
+          }
+        },
+        "epochs": {
+          "head": 20,
+          "fine_tune": 2
+        },
+        "best_epochs": {
+          "head": 11,
+          "fine_tune": 1
+        },
+        "validation": {
+          "Frozen features": {
+            "loss": 0.49264774322509763,
+            "accuracy": 0.82
+          },
+          "Fine-tuned": {
+            "loss": 0.477780237197876,
+            "accuracy": 0.84
+          }
+        },
+        "test": {
+          "Frozen features": {
+            "loss": 0.3488228917121887,
+            "accuracy": 0.8999999761581421
+          },
+          "Fine-tuned": {
+            "loss": 0.3167531490325928,
+            "accuracy": 0.8799999952316284
+          }
+        },
+        "selected_by_validation": "Fine-tuned",
+        "baseline_accuracy": 0.20000000298023224,
+        "checks": {
+          "head_preserved": true,
+          "frozen_backbone_unchanged": true,
+          "protected_fine_tune_state_unchanged": true,
+          "unfrozen_weights_changed": true,
+          "cached_direct_equivalence": true,
+          "checkpoint_roundtrip": true
+        },
+        "timing_seconds": {
+          "cache": 13.498678347999999,
+          "head_fit": 0.34978137799998876,
+          "fine_tune_fit": 35.32432073799998,
+          "total_after_imports": 75.34220356400004
+        }
+      }
+    },
+    "07": {
+      "date": "2026-10-10",
+      "code_sha256": "f01e600cde4546efa38bf461c040d6d987f8bcb5dd951b6b75f218041def4c27",
+      "code_cells": 11,
+      "status": "passed",
+      "method": "Fresh Colab CPU runtime; native run_cell executed every exact published source including package setup, downloads, detection, segmentation, exports, two-epoch training, and checkpoint reload inference. Downloaded verification notebook confirms exact source equality, no error outputs, and ALL_11_CELLS_PASSED. Five rendered figures visually inspected. Direct GitHub opening/full notebook import not tested.",
+      "metrics": {
+        "environment": {
+          "python": "3.13.16",
+          "torch": "2.11.0+cpu",
+          "torchvision": "0.26.0+cpu",
+          "ultralytics": "8.4.158",
+          "numpy": "2.1.3",
+          "pandas": "2.2.3",
+          "matplotlib": "3.10.0",
+          "device": "cpu",
+          "seed": 42
+        },
+        "image_sha256": "c02019c4979c191eb739ddd944445ef408dad5679acab6fd520ef9d434bfbc63",
+        "image_shape": [
+          1080,
+          810,
+          3
+        ],
+        "models": [
+          "yolo11n.pt",
+          "yolo11n-seg.pt"
+        ],
+        "image_size": 320,
+        "confidence": 0.35,
+        "nms_iou": 0.5,
+        "detection_count": 4,
+        "segmentation_count": 4,
+        "mask_shape": [
+          4,
+          1080,
+          810
+        ],
+        "threshold_experiment": [
+          {
+            "confidence": 0.2,
+            "nms_iou": 0.3,
+            "instances": 5,
+            "classes": "person, bus, person, person, person"
+          },
+          {
+            "confidence": 0.2,
+            "nms_iou": 0.7,
+            "instances": 5,
+            "classes": "person, bus, person, person, person"
+          },
+          {
+            "confidence": 0.5,
+            "nms_iou": 0.3,
+            "instances": 4,
+            "classes": "person, bus, person, person"
+          },
+          {
+            "confidence": 0.5,
+            "nms_iou": 0.7,
+            "instances": 4,
+            "classes": "person, bus, person, person"
+          },
+          {
+            "confidence": 0.8,
+            "nms_iou": 0.3,
+            "instances": 3,
+            "classes": "person, bus, person"
+          },
+          {
+            "confidence": 0.8,
+            "nms_iou": 0.7,
+            "instances": 3,
+            "classes": "person, bus, person"
+          }
+        ],
+        "training": {
+          "executed": true,
+          "epochs": 2,
+          "train_images": 4,
+          "validation_images": 4,
+          "dataset_url": "https://github.com/ultralytics/assets/releases/download/v0.0.0/coco8.zip",
+          "archive_sha256": "54c67fe9ef88313e021ec0e92b73c200167bb0a86633e8df8658d832cca828c9",
+          "checkpoint": "detection_training/weights/best.pt",
+          "finite_training_losses": true,
+          "checkpoint_reload_inference": true,
+          "last_epoch": {
+            "epoch": 2.0,
+            "time": 4.27775,
+            "train/box_loss": 1.23469,
+            "train/cls_loss": 2.53286,
+            "train/dfl_loss": 1.18502,
+            "metrics/precision(B)": 0.65934,
+            "metrics/recall(B)": 0.56667,
+            "metrics/mAP50(B)": 0.67644,
+            "metrics/mAP50-95(B)": 0.42676,
+            "val/box_loss": 1.7236,
+            "val/cls_loss": 1.51104,
+            "val/dfl_loss": 1.25132,
+            "lr/pg0": 0.000505,
+            "lr/pg1": 0.000505,
+            "lr/pg2": 0.000505
+          },
+          "seconds": 10.219807493999951,
+          "interpretation": "Pipeline smoke test only; COCO8 is not independent of COCO pretraining; no test estimate."
+        },
+        "checks": {
+          "box_bounds": true,
+          "mask_alignment": true,
+          "empty_result": true,
+          "background_unchanged": true,
+          "toy_iou_nms": true,
+          "export_roundtrip": true
+        },
+        "seconds_after_imports": 18.27986580400011
+      }
+    },
+    "08": {
+      "date": "2026-10-26",
+      "code_cells": 11,
+      "code_sha256": "defda57adc38d58614793f5ff645d0100bc69ce1d224a199475128309b327fea",
+      "status": "passed",
+      "method": "Complete local notebook uploaded to Colab; Run all in a newly allocated CPU runtime; browser execution counts 1-11 and TUTORIAL_08_COMPLETE observed.",
+      "metrics": {
+        "environment": {
+          "python": "3.13.16",
+          "torch": "2.11.0+cpu",
+          "numpy": "2.1.3",
+          "pandas": "2.2.3",
+          "matplotlib": "3.10.0",
+          "sklearn": "1.6.1",
+          "device": "cpu",
+          "seed": 42,
+          "quick_run": true
+        },
+        "data_url": "https://mindspore-website.obs.myhuaweicloud.com/notebook/datasets/aclImdb_v1.tar.gz",
+        "archive_sha256": "c40f74a18d3b61f90feba1e17730e0d38e8b97c05fde7008942e91923d1658fe",
+        "split_summary": {
+          "train": {
+            "reviews": 5994,
+            "positive": 2996
+          },
+          "validation": {
+            "reviews": 998,
+            "positive": 499
+          },
+          "test": {
+            "reviews": 1995,
+            "positive": 998
+          }
+        },
+        "dedup_removed": {
+          "train": 6,
+          "validation": 2,
+          "test": 5
+        },
+        "vocab_size": 8000,
+        "max_length": 200,
+        "sentiment_epochs": 8,
+        "best_epoch": 5,
+        "validation": {
+          "Masked embeddings": {
+            "log_loss": 0.3807691807480391,
+            "accuracy": 0.8266533066132264
+          },
+          "TF-IDF": {
+            "log_loss": 0.4068556103852172,
+            "accuracy": 0.8496993987975952
+          }
+        },
+        "test": {
+          "Masked embeddings": {
+            "log_loss": 0.4256735178995055,
+            "accuracy": 0.8085213032581454
+          },
+          "TF-IDF": {
+            "log_loss": 0.4307718684630401,
+            "accuracy": 0.8421052631578947
+          }
+        },
+        "selected_by_validation": "Masked embeddings",
+        "baseline_accuracy": 0.49974937343358394,
+        "skipgram": {
+          "pairs": 40000,
+          "training_reviews": 1000,
+          "epochs": 3,
+          "noise_samples": 5,
+          "losses": [
+            3.7249286853790284,
+            2.740229487991333,
+            2.4941149196624757
+          ]
+        },
+        "export_rows": {
+          "sentiment": 7998,
+          "skipgram": 4194
+        },
+        "checks": {
+          "one_hot_lookup": true,
+          "padding_invariance": true,
+          "empty_input": true,
+          "disjoint_paths": true,
+          "exact_text_dedup": true,
+          "finite_losses": true,
+          "tsv_alignment": true,
+          "checkpoint_roundtrip": true
+        },
+        "seconds_after_imports": 41.841356193000024
+      },
+      "download_regression_checks": "Mocked refused connections, fallback, verified cache, corrupt cache/checksum recovery, exhausted sources, and partial-file cleanup passed locally.",
+      "limitations": "Default quick CPU mode tested. Other runtime modes and live Stanford fallback were not exercised. No executed-notebook download comparison was performed.",
+      "previous_validation": {
+        "date": "2026-10-11",
+        "code_sha256": "426860be90992fb879028c853d347c6600827d2e3d9e79bcb4401939974bfa06",
+        "code_cells": 11,
+        "status": "passed",
+        "method": "Native Colab run_cell harness; initial fresh CPU runtime downloaded IMDb. All final sources rerun after plot improvements in the same runtime using cached data. Downloaded executed notebook confirms exact source equality, no errors, ALL_11_CELLS_PASSED. Five figures visually inspected. Direct GitHub opening/full notebook import, GPU, and full-data mode not tested.",
+        "metrics": {
+          "environment": {
+            "python": "3.13.16",
+            "torch": "2.11.0+cpu",
+            "numpy": "2.1.3",
+            "pandas": "2.2.3",
+            "matplotlib": "3.10.0",
+            "sklearn": "1.6.1",
+            "device": "cpu",
+            "seed": 42,
+            "quick_run": true
+          },
+          "data_url": "https://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz",
+          "archive_sha256": "c40f74a18d3b61f90feba1e17730e0d38e8b97c05fde7008942e91923d1658fe",
+          "split_summary": {
+            "train": {
+              "reviews": 5994,
+              "positive": 2996
+            },
+            "validation": {
+              "reviews": 998,
+              "positive": 499
+            },
+            "test": {
+              "reviews": 1995,
+              "positive": 998
+            }
+          },
+          "dedup_removed": {
+            "train": 6,
+            "validation": 2,
+            "test": 5
+          },
+          "vocab_size": 8000,
+          "max_length": 200,
+          "sentiment_epochs": 8,
+          "best_epoch": 5,
+          "validation": {
+            "Masked embeddings": {
+              "log_loss": 0.3807691806805527,
+              "accuracy": 0.8266533066132264
+            },
+            "TF-IDF": {
+              "log_loss": 0.4068556103852172,
+              "accuracy": 0.8496993987975952
+            }
+          },
+          "test": {
+            "Masked embeddings": {
+              "log_loss": 0.42567351784315866,
+              "accuracy": 0.8085213032581454
+            },
+            "TF-IDF": {
+              "log_loss": 0.4307718684630401,
+              "accuracy": 0.8421052631578947
+            }
+          },
+          "selected_by_validation": "Masked embeddings",
+          "baseline_accuracy": 0.49974937343358394,
+          "skipgram": {
+            "pairs": 40000,
+            "training_reviews": 1000,
+            "epochs": 3,
+            "noise_samples": 5,
+            "losses": [
+              3.7249286792755125,
+              2.740229487991333,
+              2.4941149135589598
+            ]
+          },
+          "export_rows": {
+            "sentiment": 7998,
+            "skipgram": 4194
+          },
+          "checks": {
+            "one_hot_lookup": true,
+            "padding_invariance": true,
+            "empty_input": true,
+            "disjoint_paths": true,
+            "exact_text_dedup": true,
+            "finite_losses": true,
+            "tsv_alignment": true,
+            "checkpoint_roundtrip": true
+          },
+          "seconds_after_imports": 45.097379456
+        }
+      }
+    },
+    "09": {
+      "date": "2026-10-11",
+      "code_sha256": "b19a04dc25bf4a030db2fd62753dbb8fe9c743a42d8337a309cd432bd649eae4",
+      "code_cells": 13,
+      "status": "passed",
+      "method": "All exact published code cells executed sequentially in a fresh Colab CPU runtime with native run_cell. Downloaded executed notebook confirms exact source equality, no error outputs, and ALL_13_CELLS_PASSED. Five figures inspected. GPU, larger mode, and direct private-GitHub opening/full notebook import not tested.",
+      "metrics": {
+        "environment": {
+          "python": "3.13.16",
+          "torch": "2.11.0+cpu",
+          "numpy": "2.1.3",
+          "pandas": "2.2.3",
+          "matplotlib": "3.10.0",
+          "device": "cpu",
+          "seed": 42,
+          "quick_run": true
+        },
+        "data_url": "https://storage.googleapis.com/download.tensorflow.org/data/spa-eng.zip",
+        "archive_sha256": "0c4fd7825d3d872488d38c157f784e035edab4f2ff0df25a2a208790ecb5b58f",
+        "filtered_pairs": 111422,
+        "unique_pairs": 92421,
+        "split_sizes": [
+          3000,
+          400,
+          400
+        ],
+        "config": {
+          "source_size": 3000,
+          "target_size": 2651,
+          "d": 64,
+          "heads": 4,
+          "ff": 128,
+          "dropout": 0.1
+        },
+        "parameters": 617691,
+        "epochs": 6,
+        "best_epoch": 6,
+        "initial_validation": {
+          "loss": 8.097469940331193,
+          "token_accuracy": 0.0,
+          "tokens": 3143
+        },
+        "best_validation_loss": 4.410450259629534,
+        "test": {
+          "teacher_forced": {
+            "loss": 4.457637462615967,
+            "token_accuracy": 0.3390625,
+            "tokens": 3200
+          },
+          "constant_token_baseline_accuracy": 0.125,
+          "baseline_token": "<eos>",
+          "known_lexical_token_accuracy": 0.26519550909794815,
+          "greedy_exact_match": 0.0,
+          "greedy_eos_rate": 0.9375,
+          "test_source_oov": 0.14484781811514486,
+          "test_target_oov": 0.0775
+        },
+        "checks": {
+          "unicode": true,
+          "split_separation_both_languages": true,
+          "target_shift": true,
+          "manual_attention": true,
+          "causal_invariance": true,
+          "padding_invariance": true,
+          "masked_attention": true,
+          "finite_training": true,
+          "eos_termination": true,
+          "cpu_checkpoint_logits": true,
+          "cpu_checkpoint_generation": true,
+          "masked_loss": true
+        },
+        "seconds_after_imports": 48.21139925100002
+      }
+    },
+    "10": {
+      "date": "2026-10-11",
+      "code_sha256": "ead57ae745a745ec2e8a7d35f42c5a59bbee09dffd38bf870700586af9e40db3",
+      "code_cells": 13,
+      "status": "passed",
+      "method": "All exact published code cells executed sequentially in a fresh Colab CPU runtime with native run_cell. Downloaded executed notebook confirms exact source equality, no error outputs, and ALL_13_CELLS_PASSED. Ten figures and the first/middle/last frames of the inline seven-frame GIF inspected. AAE skip branch, GPU, larger mode, and direct private-GitHub opening/full notebook import not tested.",
+      "metrics": {
+        "environment": {
+          "python": "3.13.16",
+          "torch": "2.11.0+cpu",
+          "torchvision": "0.26.0+cpu",
+          "numpy": "2.1.3",
+          "pandas": "2.2.3",
+          "matplotlib": "3.10.0",
+          "sklearn": "1.6.1",
+          "device": "cpu",
+          "seed": 42,
+          "quick_run": true,
+          "run_aae": true
+        },
+        "fashion_revision": "b2617bb6d3ffa2e429640350f613e3291e10b141",
+        "fashion_splits": [
+          4000,
+          800,
+          1000
+        ],
+        "mnist_splits": [
+          6000,
+          1000,
+          1000
+        ],
+        "image_metrics": {
+          "AE_test_MSE": 0.03737783059477806,
+          "training_mean_image_test_MSE": 0.08738847076892853,
+          "denoiser_test_MSE": 0.032502736896276474,
+          "unchanged_noisy_test_MSE": 0.05246926471590996
+        },
+        "image_best_epochs": {
+          "ae": 4,
+          "denoiser": 4
+        },
+        "ecg": {
+          "url": "https://storage.googleapis.com/download.tensorflow.org/data/ecg.csv",
+          "sha256": "72ce7b040ca0c6ed36c3368e570c6ac4ddf20100476e47373c63b2395e012df1",
+          "rows": 4998,
+          "duplicates_removed": 0,
+          "splits": [
+            2998,
+            1000,
+            1000
+          ],
+          "normal_training": 1751,
+          "normal_calibration": 584,
+          "best_epoch": 50,
+          "metrics": {
+            "positive_class": "anomaly (CSV label 0)",
+            "threshold": 0.04760212451219559,
+            "threshold_rule": "95th percentile of normal validation MAE",
+            "normal_validation_exceedance": 0.05136986301369863,
+            "accuracy": 0.948,
+            "precision": 0.9504950495049505,
+            "recall": 0.9230769230769231,
+            "f1": 0.9365853658536586,
+            "roc_auc": 0.9813413790832455,
+            "test_false_positive_rate": 0.03424657534246575,
+            "always_normal_accuracy": 0.584,
+            "confusion_matrix": [
+              [
+                564,
+                20
+              ],
+              [
+                32,
+                384
+              ]
+            ]
+          }
+        },
+        "vae": {
+          "latent_dim": 2,
+          "beta": 1.0,
+          "epochs": 6,
+          "best_epoch": 6,
+          "test": {
+            "objective": 188.1715625,
+            "reconstruction": 182.920671875,
+            "KL": 5.250883178710938
+          },
+          "gif_frames": 7
+        },
+        "aae": {
+          "executed": true,
+          "epochs": 2,
+          "training_images": 2000,
+          "best_epoch": 2,
+          "history": [
+            {
+              "epoch": 1,
+              "reconstruction": 0.5416509714126587,
+              "discriminator": 1.048255404472351,
+              "adversarial": 0.3226373208761215,
+              "val_reconstruction": 0.3396902179328763
+            },
+            {
+              "epoch": 2,
+              "reconstruction": 0.31303280067443845,
+              "discriminator": 1.622151686668396,
+              "adversarial": 0.107225057721138,
+              "val_reconstruction": 0.29584331403459824
+            }
+          ],
+          "shared_encoder_and_update_isolation": true,
+          "interpretation": "Short mechanism check; validation reconstruction does not measure generative quality."
+        },
+        "checkpoint_reload": {
+          "dense_ae": true,
+          "denoiser": true,
+          "ecg_ae": true,
+          "aae": true,
+          "vae": true
+        },
+        "figures": [
+          "data_examples.png",
+          "reconstruction_denoising.png",
+          "reconstruction_curves.png",
+          "ecg_evaluation.png",
+          "ecg_examples.png",
+          "vae_curves.png",
+          "vae_reconstruction_generation.png",
+          "vae_latent_space.png",
+          "vae_interpolation.png",
+          "aae_prior.png"
+        ],
+        "checks": {
+          "split_indices": true,
+          "binary_mnist": true,
+          "analytic_KL": true,
+          "reparameterization_gradients": true,
+          "finite_losses": true,
+          "anomaly_label_direction": true,
+          "vae_objective_units": true,
+          "gif_roundtrip": true
+        },
+        "seconds_after_imports": 34.68359821500002
+      }
+    },
+    "11": {
+      "date": "2026-10-12",
+      "code_sha256": "6b17cea8526ad15e37911c8a5251c8909ed8487ed3b37f60a02c2031411197ca",
+      "code_cells": 11,
+      "status": "passed",
+      "method": "All exact published code cells executed sequentially in a restarted Colab CPU session with native run_cell. Downloaded executed notebook confirms exact source equality, no error outputs, and ALL_11_CELLS_PASSED. GPU, larger mode, and direct private-GitHub opening/full notebook import not tested. Twelve rendered figures and first/middle/last frames of the thirteen-frame GIF inspected. Initial run exercised downloads; final rerun after session restart reused downloaded MNIST files.",
+      "metrics": {
+        "environment": {
+          "python": "3.13.16",
+          "torch": "2.11.0+cpu",
+          "torchvision": "0.26.0+cpu",
+          "numpy": "2.1.3",
+          "pandas": "2.2.3",
+          "matplotlib": "3.10.0",
+          "device": "cpu",
+          "seed": 42,
+          "quick_run": true
+        },
+        "splits": [
+          6000,
+          1000,
+          1000
+        ],
+        "gan_epochs": 12,
+        "gan_history": [
+          {
+            "epoch": 1,
+            "D": 0.9621990906397502,
+            "G": 0.7972063466707865
+          },
+          {
+            "epoch": 2,
+            "D": 0.5448324511845907,
+            "G": 1.3540002603530883
+          },
+          {
+            "epoch": 3,
+            "D": 0.5636441446940104,
+            "G": 1.477614602724711
+          },
+          {
+            "epoch": 4,
+            "D": 0.6025035076141357,
+            "G": 1.513760804494222
+          },
+          {
+            "epoch": 5,
+            "D": 0.6899250869750977,
+            "G": 1.529479393641154
+          },
+          {
+            "epoch": 6,
+            "D": 0.7347743635177613,
+            "G": 1.4003885072072346
+          },
+          {
+            "epoch": 7,
+            "D": 0.7901721833546956,
+            "G": 1.3105613021850586
+          },
+          {
+            "epoch": 8,
+            "D": 0.8758208545049032,
+            "G": 1.2258054501215616
+          },
+          {
+            "epoch": 9,
+            "D": 0.9861434624989828,
+            "G": 1.1123948367436727
+          },
+          {
+            "epoch": 10,
+            "D": 1.0731501010258993,
+            "G": 1.0282331754366556
+          },
+          {
+            "epoch": 11,
+            "D": 1.175610808690389,
+            "G": 0.9499261306126913
+          },
+          {
+            "epoch": 12,
+            "D": 1.2394181880950927,
+            "G": 0.8986371754010518
+          }
+        ],
+        "gif_frames": 13,
+        "inversion": {
+          "initial_MSE": 0.351484090089798,
+          "best_MSE": 0.11586850881576538
+        },
+        "paired": {
+          "best_epoch": 4,
+          "validation_L1": 0.09670792520046234,
+          "test_L1": 0.10166614502668381,
+          "edge_identity_test_L1": 0.30825868248939514,
+          "training_mean_test_L1": 0.30086633563041687
+        },
+        "paired_training_images": 2000,
+        "cycle": {
+          "X_to_Y_known_target_L1": 1.2543396949768066,
+          "Y_to_X_known_target_L1": 1.019845724105835,
+          "X_cycle_L1": 0.18133266270160675,
+          "Y_cycle_L1": 0.1364727020263672,
+          "identity_baseline_target_L1": 1.891131043434143,
+          "analytic_inversion_target_L1": 0.0
+        },
+        "cycle_epochs": 4,
+        "unpaired_images_per_domain": 1000,
+        "checkpoint_reload": {
+          "gan_G": true,
+          "gan_D": true,
+          "paired_G": true,
+          "paired_D": true,
+          "cycle_Gxy": true,
+          "cycle_Gyx": true,
+          "cycle_Dx": true,
+          "cycle_Dy": true
+        },
+        "checks": {
+          "shape_and_logit_loss": true,
+          "disjoint_splits": true,
+          "gan_gradient_and_update_isolation": true,
+          "gif_roundtrip": true,
+          "inversion_frozen_generator": true,
+          "paired_update_isolation": true,
+          "cycle_update_isolation": true,
+          "unpaired_disjoint_source_rows": true,
+          "csv_roundtrip": true
+        },
+        "figures": [
+          "real_digits.png",
+          "gan_samples.png",
+          "gan_losses.png",
+          "latent_interpolation.png",
+          "latent_inversion.png",
+          "inversion_loss.png",
+          "paired_data.png",
+          "paired_results.png",
+          "paired_diagnostics.png",
+          "unpaired_data.png",
+          "cycle_results.png",
+          "cycle_losses.png"
+        ],
+        "seconds_after_imports": 104.83731369899999
+      }
+    },
+    "12": {
+      "date": "2026-10-12",
+      "code_sha256": "629c3b73a42b3a0ffcbe432e47e18b17821d86e842c1bf7417b51b191e968cfa",
+      "code_cells": 10,
+      "status": "passed",
+      "method": "All exact published code cells executed sequentially in a fresh Colab CPU runtime with native run_cell. Downloaded executed notebook confirms exact source equality, no error outputs, and ALL_10_CELLS_PASSED. GPU, larger mode, and direct private-GitHub opening/full notebook import not tested. Seven plots and first/middle/last frames of both policy GIFs inspected. The final explanatory Markdown summarizes this run; code unchanged.",
+      "metrics": {
+        "environment": {
+          "python": "3.13.16",
+          "torch": "2.11.0+cpu",
+          "gymnasium": "1.3.0",
+          "numpy": "2.1.3",
+          "pandas": "2.2.3",
+          "matplotlib": "3.10.0",
+          "device": "cpu",
+          "seed": 42,
+          "quick_run": true
+        },
+        "cartpole_training_episodes": 240,
+        "evaluation_seeds": [
+          10000,
+          10001,
+          10002,
+          10003,
+          10004,
+          10005,
+          10006,
+          10007,
+          10008,
+          10009
+        ],
+        "evaluation": [
+          {
+            "task": "CartPole",
+            "policy": "Initial greedy",
+            "mean": 9.2,
+            "std": 0.7888106377466155,
+            "min": 8.0,
+            "max": 10.0
+          },
+          {
+            "task": "CartPole",
+            "policy": "Random",
+            "mean": 25.8,
+            "std": 14.069667926271594,
+            "min": 10.0,
+            "max": 50.0
+          },
+          {
+            "task": "CartPole",
+            "policy": "Trained greedy",
+            "mean": 352.8,
+            "std": 52.89990548195715,
+            "min": 281.0,
+            "max": 434.0
+          },
+          {
+            "task": "Materials",
+            "policy": "Analytic",
+            "mean": -0.6945041622966528,
+            "std": 0.6129068604095146,
+            "min": -1.5098338779062033,
+            "max": -0.011015579104423523
+          },
+          {
+            "task": "Materials",
+            "policy": "DDPG",
+            "mean": -1.9393374992534518,
+            "std": 0.5767674310846205,
+            "min": -2.7042101249098778,
+            "max": -1.3249950911849737
+          },
+          {
+            "task": "Materials",
+            "policy": "No adjustment",
+            "mean": -23.68650995194912,
+            "std": 11.320839117399018,
+            "min": -37.29364275932312,
+            "max": -7.6217904686927795
+          },
+          {
+            "task": "Materials",
+            "policy": "Random",
+            "mean": -26.42169235944748,
+            "std": 12.232649786364275,
+            "min": -45.49726074934006,
+            "max": -8.201979827135801
+          },
+          {
+            "task": "Pendulum",
+            "policy": "DDPG",
+            "mean": -682.2885732080662,
+            "std": 230.87287945687635,
+            "min": -884.4320514253164,
+            "max": -272.94997270428746
+          },
+          {
+            "task": "Pendulum",
+            "policy": "Initial",
+            "mean": -1082.2767041667928,
+            "std": 307.4120300736891,
+            "min": -1457.0119221710172,
+            "max": -610.6262893790762
+          },
+          {
+            "task": "Pendulum",
+            "policy": "Random",
+            "mean": -1056.9941313729876,
+            "std": 251.9116594028666,
+            "min": -1469.8897548438927,
+            "max": -754.5538842451989
+          },
+          {
+            "task": "Pendulum",
+            "policy": "Zero torque",
+            "mean": -1071.7347479522164,
+            "std": 324.9687622507526,
+            "min": -1456.320985624498,
+            "max": -512.7212782126157
+          }
+        ],
+        "ddpg": {
+          "pendulum": {
+            "steps": 6000,
+            "updates": 2750,
+            "replay_size": 6000
+          },
+          "materials": {
+            "steps": 4000,
+            "updates": 1750,
+            "replay_size": 4000
+          }
+        },
+        "animations": {
+          "cartpole": {
+            "seed": 10000,
+            "steps": 334,
+            "return": 334.0,
+            "gif_frames": 85
+          },
+          "pendulum": {
+            "seed": 10000,
+            "steps": 200,
+            "return": -273.02569486149923,
+            "gif_frames": 51
+          }
+        },
+        "checkpoint_reload": {
+          "cartpole_actor_critic": true,
+          "pendulum_actor": true,
+          "pendulum_critic": true,
+          "pendulum_actor_target": true,
+          "pendulum_critic_target": true,
+          "materials_actor": true,
+          "materials_critic": true,
+          "materials_actor_target": true,
+          "materials_critic_target": true
+        },
+        "checks": {
+          "termination_truncation_targets": true,
+          "actor_advantage_detached": true,
+          "replay_wraparound_and_flags": true,
+          "ddpg_isolation_and_soft_update_seed_43": true,
+          "materials_env_checker_and_simplex": true,
+          "ddpg_isolation_and_soft_update_seed_44": true,
+          "rgb_render_and_gif_roundtrip": true,
+          "evaluation_csv_roundtrip": true
+        },
+        "figures": [
+          "cartpole_evaluation.png",
+          "cartpole_training.png",
+          "pendulum_evaluation.png",
+          "pendulum_training.png",
+          "materials_evaluation.png",
+          "materials_training.png",
+          "materials_trajectory.png"
+        ],
+        "seconds_after_imports": 54.99861795300001
+      }
+    },
+    "13": {
+      "date": "2026-10-13",
+      "code_sha256": "79b445c4d4b82c75844bf2c348823c776d52e12032921c278144851b582d3fc9",
+      "code_cells": 10,
+      "status": "passed",
+      "method": "All exact published code cells executed sequentially in a fresh Colab CPU runtime with native run_cell. Downloaded executed notebook confirms exact source equality, no error outputs, and ALL_10_CELLS_PASSED. GPU, larger mode, and direct private-GitHub opening/full notebook import not tested. Six generated figures were visually inspected: messages/batch, Cora comparison/confusion, GIN comparison, molecule depictions, target distributions, and regression/baselines. Markdown-only observations were added after the run; code is unchanged.",
+      "metrics": {
+        "environment": {
+          "python": "3.13.16",
+          "torch": "2.11.0+cpu",
+          "pyg": "2.8.1",
+          "rdkit": "2026.09.1",
+          "numpy": "2.1.3",
+          "pandas": "2.2.3",
+          "matplotlib": "3.10.0",
+          "device": "cpu",
+          "quick_run": true,
+          "seed": 42
+        },
+        "checks": {
+          "manual_messages_and_batch_isolation": true,
+          "gcn_dense_sage_reference_gradients_equivariance": true,
+          "cora_masks_disjoint": true,
+          "graph_split_batch_equivalence_pooling_invariance": true,
+          "qm9_unique_smiles_disjoint_training_only_scaling": true,
+          "six_checkpoint_cpu_reload": true
+        },
+        "reloads": [
+          "cora_MLP",
+          "cora_GCN",
+          "cora_GraphSAGE",
+          "imdb_GIN-0",
+          "imdb_GIN-eps",
+          "qm9_GCN"
+        ],
+        "figures": [
+          "01_messages_and_batch.png",
+          "02_cora_comparison.png",
+          "03_gin_comparison.png",
+          "04_qm9_molecules.png",
+          "05_qm9_targets.png",
+          "06_qm9_regression.png"
+        ],
+        "cora": {
+          "results": [
+            {
+              "model": "MLP",
+              "selected_epoch": 113,
+              "val_loss": 1.3140978813171387,
+              "train_accuracy": 1.0,
+              "val_accuracy": 0.5799999833106995,
+              "test_accuracy": 0.5879999995231628
+            },
+            {
+              "model": "GCN",
+              "selected_epoch": 119,
+              "val_loss": 0.8832610845565796,
+              "train_accuracy": 0.9857142567634583,
+              "val_accuracy": 0.7820000052452087,
+              "test_accuracy": 0.8119999766349792
+            },
+            {
+              "model": "GraphSAGE",
+              "selected_epoch": 116,
+              "val_loss": 0.7066888213157654,
+              "train_accuracy": 1.0,
+              "val_accuracy": 0.7820000052452087,
+              "test_accuracy": 0.8080000281333923
+            }
+          ],
+          "test_majority_accuracy": 0.12999999523162842,
+          "selected_model": "GraphSAGE"
+        },
+        "imdb": {
+          "results": [
+            {
+              "model": "GIN-0",
+              "selected_epoch": 34,
+              "val_loss": 0.5161135792732239,
+              "test_accuracy": 0.6933333277702332
+            },
+            {
+              "model": "GIN-eps",
+              "selected_epoch": 31,
+              "val_loss": 0.4973963797092438,
+              "test_accuracy": 0.7066666483879089
+            }
+          ],
+          "test_majority_accuracy": 0.5,
+          "split_sizes": [
+            700,
+            150,
+            150
+          ]
+        },
+        "qm9": {
+          "results": [
+            {
+              "model": "Training mean",
+              "test_mae_D": 1.1964919567108154,
+              "test_rmse_D": 1.5277293920516968
+            },
+            {
+              "model": "Atom-count Ridge",
+              "test_mae_D": 1.0380520385267347,
+              "test_rmse_D": 1.3831593282328978
+            },
+            {
+              "model": "Molecular GCN",
+              "test_mae_D": 0.7632732391357422,
+              "test_rmse_D": 1.0746029615402222
+            }
+          ],
+          "split_sizes": [
+            2100,
+            450,
+            450
+          ],
+          "csv_sha256": "3e668f8c34e4bc392a90d417a50a5eed3b64b842a817a633024bdc054c68ccb4",
+          "invalid_smiles_skipped": 0,
+          "duplicates_skipped": 0,
+          "selected_epoch": 40,
+          "ridge_alpha": 0.1,
+          "validation_mae_D": 0.7745209336280823
+        },
+        "elapsed_seconds_after_imports": 46.333889881000005
+      }
+    },
+    "14": {
+      "date": "2026-10-15",
+      "code_sha256": "82d0100566d2c1b3fe4717a650e19f31189ed4463ba9cc972057aee315672c5d",
+      "code_cells": 9,
+      "status": "passed",
+      "method": "Exact code-cell sources executed sequentially in a fresh Colab CPU runtime using native run_cell. Rendered output retained with matching SOURCE_SHA256 and ALL_9_CELLS_PASSED; four rendered PNGs extracted from the output DOM and visually inspected. Browser notebook download did not produce an accessible file, so no downloaded executed-notebook comparison is claimed. Markdown observations were added after execution; code unchanged. Direct private-GitHub import, GPU, longer mode, paid APIs, and DSPy were not tested.",
+      "metrics": {
+        "environment": {
+          "python": "3.13.16",
+          "torch": "2.11.0+cpu",
+          "transformers": "5.18.0",
+          "rdkit": "2026.09.1",
+          "numpy": "2.1.3",
+          "pandas": "2.2.3",
+          "matplotlib": "3.10.0",
+          "device": "cpu",
+          "quick_run": true,
+          "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+          "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775"
+        },
+        "checks": {
+          "tool_values_schema_and_errors": true,
+          "single_token_allowed_actions": true,
+          "recovery_budget_unknown_action_and_evidence": true,
+          "disjoint_wording_frozen_selection_bounded_traces": true,
+          "config_tokenizer_trace_reload_and_evidence_replay": true
+        },
+        "figures": [
+          "01_molecules_and_tools.png",
+          "02_action_scores.png",
+          "03_agent_trace.png",
+          "04_prompt_and_test_results.png"
+        ],
+        "direct_answer": "2",
+        "direct_reference": {
+          "ok": true,
+          "tool": "hbd",
+          "smiles": "CC(=O)Oc1ccccc1C(=O)O",
+          "value": 1.0,
+          "unit": "count",
+          "source": "RDKit 2026.09.1"
+        },
+        "direct_strict_numeric_match": false,
+        "selected_prompt": "examples",
+        "development_accuracy": {
+          "brief": 0.5,
+          "examples": 0.75
+        },
+        "test_cases": 8,
+        "test_metrics": {
+          "Routing": 0.5,
+          "End-to-end": 0.5
+        },
+        "test_records": [
+          {
+            "question": "How many groups can donate a hydrogen bond?",
+            "molecule": "glycine",
+            "target": "hbd",
+            "selected_tool": "mw",
+            "status": "answered",
+            "tool_calls": 3,
+            "routing_correct": false,
+            "end_to_end_correct": false
+          },
+          {
+            "question": "Report the hydrogen-bond donor count for this structure.",
+            "molecule": "water",
+            "target": "hbd",
+            "selected_tool": "hbd",
+            "status": "answered",
+            "tool_calls": 3,
+            "routing_correct": true,
+            "end_to_end_correct": true
+          },
+          {
+            "question": "How many groups can accept a hydrogen bond?",
+            "molecule": "aspirin",
+            "target": "hba",
+            "selected_tool": "mw",
+            "status": "answered",
+            "tool_calls": 3,
+            "routing_correct": false,
+            "end_to_end_correct": false
+          },
+          {
+            "question": "Report the hydrogen-bond acceptor count for this structure.",
+            "molecule": "ethanol",
+            "target": "hba",
+            "selected_tool": "hba",
+            "status": "answered",
+            "tool_calls": 3,
+            "routing_correct": true,
+            "end_to_end_correct": true
+          },
+          {
+            "question": "Find the average molecular mass in g/mol.",
+            "molecule": "caffeine",
+            "target": "mw",
+            "selected_tool": "mw",
+            "status": "answered",
+            "tool_calls": 3,
+            "routing_correct": true,
+            "end_to_end_correct": true
+          },
+          {
+            "question": "Report molecular weight for the given structure.",
+            "molecule": "benzene",
+            "target": "mw",
+            "selected_tool": "mw",
+            "status": "answered",
+            "tool_calls": 3,
+            "routing_correct": true,
+            "end_to_end_correct": true
+          },
+          {
+            "question": "Estimate the melting point in Celsius.",
+            "molecule": "water",
+            "target": "unsupported",
+            "selected_tool": "mw",
+            "status": "answered",
+            "tool_calls": 3,
+            "routing_correct": false,
+            "end_to_end_correct": false
+          },
+          {
+            "question": "Calculate both donor and acceptor counts.",
+            "molecule": "glycine",
+            "target": "unsupported",
+            "selected_tool": "hbd",
+            "status": "answered",
+            "tool_calls": 3,
+            "routing_correct": false,
+            "end_to_end_correct": false
+          }
+        ],
+        "model_routing_forward_calls": 27,
+        "live_demo_status": "answered",
+        "live_demo_steps": 3,
+        "elapsed_seconds_after_imports": 93.66422995599999
+      }
+    },
+    "15": {
+      "date": "2026-10-18",
+      "code_sha256": "17d55538ec67b6e65113205a44b8fa3f15e14773a76f041b93cfca2354b16fe8",
+      "code_cells": 9,
+      "status": "passed",
+      "method": "Exact published code-cell sources executed sequentially in a fresh Colab CPU runtime using native run_cell. Rendered output retained with matching SOURCE_SHA256 and ALL_9_CELLS_PASSED. Four PNGs extracted from the rendered output DOM and visually inspected. No downloaded executed-notebook comparison or direct private-GitHub import claimed. Markdown observations added after execution; code unchanged. GPU, longer mode, paid APIs, LangGraph/LangSmith, token streaming, and query rewriting not tested.",
+      "metrics": {
+        "environment": {
+          "python": "3.13.16",
+          "torch": "2.11.0+cpu",
+          "transformers": "5.18.0",
+          "numpy": "2.1.3",
+          "pandas": "2.2.3",
+          "matplotlib": "3.10.0",
+          "device": "cpu",
+          "quick_run": true,
+          "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "embedding_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "generator": "Qwen/Qwen2.5-0.5B-Instruct",
+          "generator_revision": "7ae557604adf67be50417f59c2c2f167def9a775"
+        },
+        "checks": {
+          "offsets_coverage_unique_ids": true,
+          "embedding_norm_padding_and_filters": true,
+          "empty_filter_no_generation": true,
+          "index_manifest_rank_reload_and_tamper_detection": true
+        },
+        "figures": [
+          "01_chunk_boundaries.png",
+          "02_embedding_similarity.png",
+          "03_retrieval_metrics.png",
+          "04_generation_diagnostics.png"
+        ],
+        "documents": 12,
+        "chunks": 97,
+        "web_sha256": "c0ffaa16be6c28865a87fa896593249f9067a02b57ee87d528acd4262bbc08bf",
+        "embedding_truncated_chunks": 1,
+        "retrieval_queries": 8,
+        "retrieval_metrics": {
+          "dense": {
+            "hit1": 0.875,
+            "hit3": 1.0,
+            "rr3": 0.9375
+          },
+          "tfidf": {
+            "hit1": 0.75,
+            "hit3": 1.0,
+            "rr3": 0.875
+          }
+        },
+        "generation_metrics": {
+          "content_probe_4": 1,
+          "citation_ids_valid_4": 0,
+          "exact_abstention_2": 1
+        },
+        "generation_records": [
+          {
+            "question": "What is Cerulean-A's optical band gap at 100 K in the fictional records?",
+            "answer": "1.85 eV",
+            "answerable": true,
+            "content_probe": false,
+            "exact_abstention": false,
+            "citation_ids_valid": false
+          },
+          {
+            "question": "What measurement uncertainty accompanies Amber-B's optical gap at 300 K?",
+            "answer": "0.06 eV",
+            "answerable": true,
+            "content_probe": true,
+            "exact_abstention": false,
+            "citation_ids_valid": false
+          },
+          {
+            "question": "For how many minutes was Cerulean-A annealed?",
+            "answer": "[17]",
+            "answerable": true,
+            "content_probe": false,
+            "exact_abstention": false,
+            "citation_ids_valid": false
+          },
+          {
+            "question": "In which atmosphere was Amber-B annealed?",
+            "answer": "[chunk_id] M5_0",
+            "answerable": true,
+            "content_probe": false,
+            "exact_abstention": false,
+            "citation_ids_valid": false
+          },
+          {
+            "question": "What is Amber-B's melting temperature?",
+            "answer": "[chunk_id] M5_0\n\nNO_EVIDENCE",
+            "answerable": false,
+            "content_probe": null,
+            "exact_abstention": false,
+            "citation_ids_valid": false
+          },
+          {
+            "question": "What is Cerulean-A's long-term stability lifetime?",
+            "answer": "NO_EVIDENCE",
+            "answerable": false,
+            "content_probe": null,
+            "exact_abstention": true,
+            "citation_ids_valid": false
+          }
+        ],
+        "without_retrieval": "NO_EVIDENCE",
+        "example_rag_answer": "Cerulean-A's band gap at 300 K is 1.73 eV.",
+        "web_answer": "Task decomposition is transforming big tasks into multiple manageable tasks and shedding light into an interpretation of the model's thinking process.",
+        "generation_calls": 9,
+        "elapsed_seconds_after_imports": 91.98715946099992
+      }
+    }
+  }
+}

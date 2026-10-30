@@ -1,52 +1,65 @@
-# SysEn-5888/6888: Deep Learning 📚🤖
+# Deep Learning Tutorials · PyTorch on Colab
 
-Welcome to **SYSEN 5888/6888: Deep Learning** at Cornell University! This repository contains a series of tutorials designed to guide you from foundational concepts of deep learning all the way to advanced techniques. Whether you are just getting started or looking to level up your understanding, these materials will help you build a strong skill set in deep learning, covering environment setup, data handling, state-of-the-art architectures, and more.
+Learn Python, data analysis, and neural networks through fifteen self-contained notebooks. Lessons are written in English; deep-learning examples use PyTorch.
 
-## 🚀 What Will You Learn?
+## Start learning
 
-This course covers:
+Click a badge to open a notebook in Colab. No local Python installation or repository clone is needed.
 
-- **Environment Setup & Python Basics**: Begin with a solid foundation in Python and Jupyter.
-- **Data Handling & Visualization**: Preprocess and explore data using NumPy, Pandas, and visualization libraries.
-- **Deep Learning Frameworks**: Implement and train neural networks using PyTorch and TensorFlow.
-- **Vision & NLP**: Gain expertise in CNNs for images and delve into text processing using embeddings, RNNs, and CNNs for language tasks.
-- **Advanced Architectures**: Understand Transformers for sequence tasks, and explore cutting-edge generative models like VAEs and GANs.
-- **Reinforcement Learning & GNNs**: Apply deep RL algorithms and learn Graph Neural Networks for complex data structures.
-- **LLMs & RAG**: Explore Large Language Models and integrate external data sources with Retrieval Augmented Generation techniques.
+**First-time Colab use:** You may see “This notebook was not authored by Google.” This is a notebook-source notice, not a Python error. Confirm that you opened the intended course repository and trust its code, then choose **Run anyway**.
 
+**Runtime availability:** Work through one tutorial at a time and disconnect unused sessions. If Colab reports too many active sessions, use **Manage sessions** to terminate an unused runtime after downloading any files you want to keep. Closing a browser tab alone may leave its runtime active. Free-tier limits are dynamic rather than a guaranteed fixed number; see the [Colab FAQ](https://research.google.com/colaboratory/faq.html).
 
-## 📚 Tutorials Overview
+| Tutorial | What you will learn | Open |
+|---|---|---|
+| **[01 Colab and Python Basics](Tutorial_01_Colab_and_Python_Basics/README.md)** | Python types, collections, control flow, functions, and a synthetic energy summary | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PEESEgroup/SysEn6888/blob/main/Tutorial_01_Colab_and_Python_Basics/tutorial_01_python.ipynb) |
+| **[02 NumPy, Pandas, and Visualization](Tutorial_02_NumPy_Pandas_and_Visualization/README.md)** | Array operations, Series/MultiIndex, data cleaning, Matplotlib styling, Seaborn plots, and Plotly maps | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PEESEgroup/SysEn6888/blob/main/Tutorial_02_NumPy_Pandas_and_Visualization/tutorial_02_data.ipynb) |
+| **[03 Regression and Classification](Tutorial_03_PyTorch_Regression_and_Classification/README.md)** | Auto MPG regression and Fashion-MNIST classification with PyTorch | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PEESEgroup/SysEn6888/blob/main/Tutorial_03_PyTorch_Regression_and_Classification/tutorial_03_pytorch.ipynb) |
+| **[04 Convolutional Neural Networks](Tutorial_04_Convolutional_Neural_Networks/README.md)** | MNIST dense/CNN comparison and CIFAR-10 regularization and augmentation | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PEESEgroup/SysEn6888/blob/main/Tutorial_04_Convolutional_Neural_Networks/tutorial_04_cnn.ipynb) |
+| **[05 CNNs in Practice](Tutorial_05_CNN_in_Practice/README.md)** | Transfer learning, feature maps, Grad-CAM, optional neural style transfer, and a visual ViT image-to-token walkthrough | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PEESEgroup/SysEn6888/blob/main/Tutorial_05_CNN_in_Practice/tutorial_05_cnn_practice.ipynb) |
+| **[06 Transfer Learning](Tutorial_06_Transfer_Learning/README.md)** | Pretrained inference, frozen features versus fine-tuning, parameter audits, and five-class flower classification | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PEESEgroup/SysEn6888/blob/main/Tutorial_06_Transfer_Learning/tutorial_06_pytorch.ipynb) |
+| **[07 Object Detection and Segmentation](Tutorial_07_Object_Detection_and_Segmentation/README.md)** | YOLO11 boxes, instance masks, NMS/threshold experiments, exports, and a tiny detection training workflow | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PEESEgroup/SysEn6888/blob/main/Tutorial_07_Object_Detection_and_Segmentation/tutorial_07_pytorch.ipynb) |
+| **[08 Text and Word Embeddings](Tutorial_08_Text_and_Sequences/README.md)** | Tokenization, masked-pooling sentiment, TF-IDF, Skip-gram negative sampling, embedding visualization and export | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PEESEgroup/SysEn6888/blob/main/Tutorial_08_Text_and_Sequences/tutorial_08_pytorch.ipynb) |
+| **[09 Encoder–Decoder Transformers](Tutorial_09_Transformers_Implementation/README.md)** | Positions, self/cross-attention, causal masks, Spanish–English training and autoregressive translation | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PEESEgroup/SysEn6888/blob/main/Tutorial_09_Transformers_Implementation/tutorial_09_pytorch.ipynb) |
+| **[10 Autoencoders and VAEs](Tutorial_10_Generative_Modeling_VAE/README.md)** | Reconstruction, denoising, ECG anomaly scoring, VAE latent exploration, and shared-encoder adversarial training | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PEESEgroup/SysEn6888/blob/main/Tutorial_10_Generative_Modeling_VAE/tutorial_10_pytorch.ipynb) |
+| **[11 GANs and Image Translation](Tutorial_11_Generative_Modeling_GAN/README.md)** | DCGAN, fixed-noise animation, latent inversion, paired U-Net/PatchGAN, and unpaired cycle consistency | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PEESEgroup/SysEn6888/blob/main/Tutorial_11_Generative_Modeling_GAN/tutorial_11_pytorch.ipynb) |
+| **[12 Deep Reinforcement Learning](Tutorial_12_Deep_Reinforcement_Learning/README.md)** | CartPole actor–critic, Pendulum DDPG, constrained toy materials control, baselines, and policy animations | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PEESEgroup/SysEn6888/blob/main/Tutorial_12_Deep_Reinforcement_Learning/tutorial_12_pytorch.ipynb) |
+| **[13 Graph Neural Networks](Tutorial_13_Graph_Neural_Networks/README.md)** | Message passing, GCN/GraphSAGE on Cora, GIN graph classification, and QM9 dipole regression | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PEESEgroup/SysEn6888/blob/main/Tutorial_13_Graph_Neural_Networks/tutorial_13_pytorch.ipynb) |
+| **[14 LLM-Based Agents](Tutorial_14_LLM_based_Agent/README.md)** | Local Qwen inference, RDKit tools, bounded recovery, prompt selection, and auditable traces | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PEESEgroup/SysEn6888/blob/main/Tutorial_14_LLM_based_Agent/tutorial_14_pytorch.ipynb) |
+| **[15 Retrieval-Augmented Generation](Tutorial_15_Retrieval_Augmented_Generation/README.md)** | Web loading, chunk overlap, MiniLM/TF-IDF retrieval, local Qwen answers, citations, and index reload | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PEESEgroup/SysEn6888/blob/main/Tutorial_15_Retrieval_Augmented_Generation/tutorial_15_pytorch.ipynb) |
 
-Below is the updated tutorial structure, including merged and newly added tutorials. Each tutorial includes comprehensive Jupyter notebooks and, in some cases, supplementary slides. Feel free to start from the beginning or jump directly to areas of interest.
+1. Open a notebook and connect to a runtime. A CPU is sufficient for the default examples.
+2. Optionally choose **File → Save a copy in Drive** to keep your changes.
+3. Choose **Runtime → Run all**, or work through the cells in order. Setup cells install missing packages inside Colab.
+4. Read the explanations and try the exercises after the initial run. Each lesson can run independently; following 01 → 15 is recommended for beginners.
 
-| #   | Tutorial & Link                                                                                              | Description                                                                                               | Topics Covered                                                      |
-| --- | ------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| 01  | [Environment Setup, Jupyter, and Python Basics](./Tutorial_01_Environment_Setup_Jupyter_and_Python_Basics) | **Learn:** How to configure your environment, navigate Jupyter Notebooks, and review Python fundamentals. | Jupyter, Python Basics, Env Setup                                   |
-| 02  | [NumPy, Pandas, and Visualizations](./Tutorial_02_NumPy_Pandas_and_Visualizations)            | **Learn:** Core array, data manipulation, and visualization techniques for effective data analysis.       | NumPy, Pandas, Data Visualization                                   |
-| 03  | [PyTorch and TensorFlow Introduction](./Tutorial_03_PyTorch_and_TensorFlow_Introduction)          | **Learn:** Build a simple neural network using PyTorch & TensorFlow.                                        | PyTorch and TensorFlow Setup                                      |
-| 04  | [Basics of Vision CNN](./Tutorial_04_Basics_of_Vision_CNN)                                   | **Learn:** Fundamental principles of CNNs for image classification tasks.                                 | CNN, Computer Vision, MNIST Classification                          |
-| 05  | [CNN in Practice](./Tutorial_05_CNN_in_Practice)                                               | **Learn:** Explore deeper CNN architectures, optimization techniques, and best practices.                 | Advanced CNNs, Optimization Techniques                              |
-| 06  | [Transfer Learning](./Tutorial_06_Transfer_Learning)                                              | **Learn:** Fine-tune pre-trained models for new tasks.                        | Transfer Learning, Fine-tuning                    |
-| 07  | [Object Detection and Segmentation](./Tutorial_07_Object_Detection_and_Segmentation)          | **Learn:** Techniques for identifying objects and segmenting images.                                      | YOLOv3, Image Segmentation                                          |
-| 08  | [Text & Sequences](./Tutorial_08_Text_and_Sequences) | **Learn:** Handle textual data, use embeddings (Word2Vec), and apply RNNs/CNNs for NLP tasks.             | NLP Fundamentals, Embeddings, RNN, CNN for Text                     |
-| 09  | [Transformers Implementation](./Tutorial_09_Transformers_Implementation)                        | **Learn:** Implement the Transformer model and leverage attention mechanisms for sequence-to-sequence tasks. | Transformers, Attention, Machine Translation                  |
-| 10  | [Generative Modeling: VAE](./Tutorial_10_Generative_Modeling_VAE)                             | **Learn:** Variational Autoencoders (VAEs) for generative modeling.                                        | VAE, Latent Representations, Generative Models                      |
-| 11  | [Generative Modeling: GAN](./Tutorial_11_Generative_Modeling_GAN)                             | **Learn:** GAN fundamentals, including conditional and cycle-consistent GANs for advanced image generation. | GAN, Conditional GAN, CycleGAN                             |
-| 12  | [Deep Reinforcement Learning](./Tutorial_12_Deep_Reinforcement_Learning)                   | **Learn:** Apply deep RL algorithms for control problems and decision-making tasks.                        | Reinforcement Learning, Actor-Critic, DDPG                          |
-| 13  | [GNN](./Tutorial_13_Graph_Neural_Networks)                           | **Learn:** Work with Graph Neural Networks and optimize training workflows  | GNN, Functional API, Callbacks, Distributed Training                |
-| 14  | [LLM-based Agent](./Tutorial_14_LLM_based_Agent)                                                                              | **Learn:** Explore LLM fundamentals, fine-tuning, and prompt engineering techniques for text-based tasks.  | LLM Basics, Fine-tuning, Prompt Engineering, NLP                    |
-| 15  | [Retrieval Augmented Generation](./Tutorial_15_Retrieval_Augmented_Generation)                                                                     | **Learn:** Integrate external knowledge sources into LLM workflows for improved context and results.       | RAG, Knowledge Retrieval, Contextual Augmentation, Vector Databases |
+## Runtime and data
 
+- **01:** Python standard library only; no package installation or external data.
+- **02:** NumPy, Pandas, Matplotlib, Seaborn, and Plotly; embedded synthetic energy data plus automatic downloads of historical tips and county unemployment data.
+- **03:** Auto MPG and Fashion-MNIST download automatically. The default quick run uses 6,000 Fashion-MNIST training images.
+- **04:** MNIST and CIFAR-10 download automatically (CIFAR-10 archive about 163 MB). Quick mode uses small subsets and three epochs per model. The full archive is still downloaded; the official server can take 20 minutes or more.
+- **05:** Ants/bees archive (about 45 MB) and pretrained MobileNetV2 weights (about 14 MB) download automatically. Frozen features keep the core lesson practical on CPU. Neural style transfer is **off by default**: enabling `RUN_STYLE_TRANSFER` downloads VGG19 weights (about 550 MB) and performs a separate optimization. The tiny Vision Transformer section compares images, patch sequences, numeric embeddings, positional information, and untrained attention; it does not train a classifier.
+- **06:** Flowers archive (about 218 MB) and MobileNetV2 weights (about 14 MB) download automatically. Quick mode uses 200/50/50 train/validation/test images, 20 cached-feature head epochs, and two image-based fine-tuning epochs.
+- **07:** Pinned Ultralytics/YOLO11 setup, bundled example image, about 12 MB of nano model weights, and a roughly 7 MB COCO128 download. The default includes five CPU-compatible detection training epochs on ten training images; set `RUN_TRAINING=False` to skip them. COCO128 is a workflow smoke test, not an independent benchmark.
+- **08:** IMDb archive (about 84 MB), with balanced subsets and exact-text deduplication. Eight sentiment epochs and three Skip-gram epochs run by default; includes TF-IDF comparison, embedding plots, TSV exports, and checkpoint reload.
+- **09:** A 2.6 MB Spanish–English archive; 3,000/400/400 short pairs and six Transformer training epochs in quick mode. Includes token/position/attention plots, teacher-forced and greedy evaluation, and CPU checkpoint reload.
+- **10:** Fashion-MNIST, MNIST, and ECG downloads (~50 MB). CPU-friendly AE/denoising, normal-only anomaly fitting, a 2D VAE, and a two-epoch shared-encoder AAE demonstration. Includes ten figures, a fixed-prior training GIF, and five checkpoint reloads.
+- **11:** MNIST (~12 MB), twelve compact DCGAN epochs, four paired edge-to-digit epochs, and four unpaired normal/inverted-digit epochs. Includes fixed-noise animation, latent interpolation/inversion, update-isolation checks, and eight inference checkpoint reloads.
+- **12:** Gymnasium classic control; 240 CartPole episodes, 6,000 Pendulum steps, and 4,000 synthetic materials steps. Includes independent evaluation seeds, seven plots, two policy GIFs, and nine network reloads. No dataset or Atari ROM download.
 
-## 📖 Keep Learning
+- **13:** PyG/RDKit, Cora, IMDB-BINARY, and a roughly 30 MB QM9 CSV. Quick mode uses 120 Cora epochs per model, 35 IMDB epochs per GIN, and 45 regression epochs on 3,000 molecules. Includes message/batch diagrams, baselines, and six checkpoint reloads.
 
-- Check out the official [TensorFlow documentation](https://www.tensorflow.org/) and [PyTorch documentation](https://pytorch.org/) for more details.  
-- Explore [Hugging Face](https://huggingface.co/) for NLP and model repositories.  
+- **14:** Public Qwen2.5-0.5B-Instruct (~1 GB download), PyTorch and RDKit. No API key or paid inference calls. Two prompt candidates, an explicit six-molecule catalogue, and bounded tool calls. Default CPU code passed; held-out routing/end-to-end accuracy was 4/8, with failure cases retained.
 
-## 🙏 Acknowledgments
+- **15:** MiniLM embeddings (~91 MB) and Qwen2.5-0.5B-Instruct (~1 GB), a live web article, and embedded fictional materials records. No API key or paid calls. Includes lexical/dense comparison, separate retrieval/content/citation/abstention diagnostics, four figures, and index/manifest reload.
 
-A huge thank you to the course instructors, teaching assistants, and contributors who have made these tutorials possible. Your dedication, feedback, and improvements help create a rich learning experience for everyone interested in deep learning.
+For 03–06 and 08–13, `QUICK_RUN = True` is the default. Set it to `False` for larger experiments. `DEVICE_PREFERENCE = "auto"` uses a GPU when available and otherwise CPU; select `"cpu"` to force CPU. Tutorials 14–15 use the same device setting; their quick flags control generated answer length rather than training size. Downloads require internet access; no API key or Google Drive mount is required. Colab runtime files are temporary: download anything you want to keep from `outputs/tutorial_XX/` before disconnecting.
 
-If you find any issues or have suggestions, feel free to raise an issue or submit a pull request. Don’t forget to **⭐ star this repository** to keep track of updates and make it easier to find later!
+The notebooks retain installed Colab packages and install only missing dependencies. They print their environment versions. All fifteen default code paths passed sequential execution in Colab CPU runtimes. See [validation evidence and limits](docs/validation.md) for the exact tests performed; quick-mode results are teaching examples, not benchmark claims.
 
-Happy learning and exploring! 🎉
+## Attribution and license
+
+License information is available in [LICENSE](LICENSE). TensorFlow versions are outside this series' scope.
+
+Data and pretrained model sources are attributed in the notebooks. These include [UCI Auto MPG](https://doi.org/10.24432/C5859H), [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist), MNIST, CIFAR-10, the PyTorch-hosted ants/bees archive, Google flower photos, ManyThings/Tatoeba bilingual pairs, the Google-hosted ECG CSV, COCO128, [Stanford IMDb](https://ai.stanford.edu/~amaas/data/sentiment/), torchvision model weights, Ultralytics YOLO11 weights/example assets, Cora/Planetoid, TU IMDB-BINARY, and QM9 via DeepChem. The code license does not replace their respective terms. Datasets and model weights are downloaded from their sources and are not committed here.

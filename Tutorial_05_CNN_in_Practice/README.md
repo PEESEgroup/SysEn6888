@@ -1,28 +1,15 @@
-# Tutorial 5: CNN in Practice
+# Tutorial 05 CNNs in Practice
 
-This repository contains two tutorials showcasing practical applications of Convolutional Neural Networks (CNNs) using TensorFlow and PyTorch.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PEESEgroup/SysEn6888/blob/main/Tutorial_05_CNN_in_Practice/tutorial_05_cnn_practice.ipynb)
 
-## Tutorials Overview
+Transfer learning, feature maps, Grad-CAM, optional neural style transfer, and a visual ViT image-to-token walkthrough.
 
-### 1. CNN in Practice with TensorFlow
-This tutorial demonstrates:
-- **Feature Extraction**: Reusing a pre-trained CNN on a new dataset, a useful approach when working with small datasets.
-- **Visualization of Learned Concepts**: 
-  - Intermediate ConvNet outputs.
-  - Filters in ConvNets.
-  - Heatmaps of class activation (GradCAM).
+**Runtime:** CPU core lesson; optional style transfer is heavier. Open the notebook, connect, and select **Runtime → Run all**. Dependency setup is included. Each notebook runs independently without local files or earlier lessons.
 
-*Note*: The tutorial concludes with a feature extraction example, with fine-tuning covered in the next lecture.
+Basic CNN concepts (Tutorial 04) are helpful. The core lesson trains a new classification head using frozen MobileNetV2 features, inspects filters and activations, computes Grad-CAM, and verifies a saved model. Outputs go to `outputs/tutorial_05/`. Grad-CAM is a model diagnostic, not a causal explanation.
 
-### 2. CNN in Practice with PyTorch
-This tutorial covers the same concepts as the TensorFlow tutorial, implemented using PyTorch:
-- **Feature Extraction**: Leveraging pre-trained models for small datasets.
-- **Visualization of Learned Concepts**: 
-  - Intermediate ConvNet outputs.
-  - ConvNet filters.
-  - GradCAM-based class activation heatmaps.
+**Optional style transfer:** `RUN_STYLE_TRANSFER = False` by default. Enabling it downloads about 550 MB of VGG19 weights; quick mode optimizes a 128-pixel image for 40 steps. The final tiny ViT uses random weights to show image grids, patch sequences, pixel-vector and embedding heatmaps, CLS/positional embeddings, and attention. It verifies exact patch reconstruction and matching convolution/linear projections. Four `vit_*.png` figures and a patch-size comparison table make the intermediate representations visible; these are not trained predictions.
 
-## Acknowledgments
-- François Chollet
-- Tensorflow.org
-- pytorch.org
+See the [series README](../README.md) and [validation report](../docs/validation.md).
+
+See the notebook for data references and the repository LICENSE for license information.

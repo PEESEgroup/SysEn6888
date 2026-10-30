@@ -1,54 +1,24 @@
-# Graph Neural Networks (GNN)
+# Tutorial 13 Graph Neural Networks
 
-Graph Neural Networks (GNNs) are specialized deep learning models designed to learn from graph-structured data. This repository provides detailed tutorials and code examples on building, training, and evaluating GNN models using PyTorch and PyTorch Geometric (PyG). In addition to classical tasks like vertex classification and graph classification, we emphasize AI for Materials applications where GNNs are used for material property prediction and analysis.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PEESEgroup/SysEn6888/blob/main/Tutorial_13_Graph_Neural_Networks/tutorial_13_pytorch.ipynb)
 
----
+Open in Colab, connect to a runtime, and choose **Runtime → Run all**. Package installation and data downloads happen inside the notebook; no local environment setup is required.
 
-## Tutorials Overview
+## What you will build
 
-GNNs excel at modeling complex relationships by representing data as graphs, where nodes represent entities and edges represent relationships. These models have found applications in a wide variety of fields, including:
-- **Social Networks:** Understanding user behavior and predicting social connections.
-- **Recommendation Systems:** Learning user-item interactions.
-- **Traffic Networks:** Predicting congestion and optimizing routes.
-- **Materials Science (AI for Materials):** Predicting material properties such as formation energy, band gap, dipole moments, and more.
+- A visual trace of neighbor messages and disconnected graph mini-batches.
+- GCN and mean GraphSAGE layers with dense/reference and permutation checks.
+- Cora node classification: MLP, GCN, and GraphSAGE with validation-selected checkpoints.
+- IMDB-BINARY graph classification: GIN-0 versus learned-epsilon GIN.
+- Real QM9 dipole regression in Debye, with mean and atom-count Ridge baselines.
+- Six CPU checkpoint round trips, metric CSVs, prediction exports, and a JSON run summary.
 
-**AI for Materials Topics Covered:**
-- **Material Property Prediction:** Leveraging GNNs to forecast key properties (e.g., formation energy, band gap, dipole moments) critical for materials design.
-- **Dataset Utilization:** Utilizing benchmarks like the QM9 dataset to train models on molecular graphs tailored to materials science.
-- **Graph-Based Materials Analysis:** Applying graph machine learning techniques to interpret and analyze the underlying structure of materials.
+## Default workload and interpretation
 
-This guide walks you through:
-- Building GNN models from scratch (GCN, GraphSAGE, GIN, etc.).
-- Efficiently loading and processing graph data using PyG.
-- Training models for vertex classification, graph classification, and regression.
-- Applying GNNs to the materials domain via property prediction on datasets such as QM9.
+`QUICK_RUN=True`: 120 epochs for each Cora model, 35 epochs for each GIN, and 45 QM9 epochs on 3,000 molecules (2,100/450/450). Cora uses its public masks; IMDB uses a stratified 700/150/150 split. Setup retains installed PyTorch and installs missing PyG/RDKit dependencies. The QM9 CSV is about 30 MB; the full 3D archive is not needed. All figures are generated in the notebook.
 
+This is one seeded teaching experiment. Cora is transductive; IMDB graph IDs are disjoint but isomorphic graphs were not audited; QM9 uses random, unique-SMILES splits and omits 3D coordinates and bond types. These are not benchmark or materials-discovery claims. GPU and larger mode require separate verification.
 
+Save files from `outputs/tutorial_13/` before Colab disconnects. See [validation evidence](../docs/validation.md) for actual runtime checks and their limits.
 
-### 1. GNN Fundamentals with PyTorch Geometric
-- **Framework:** PyTorch with PyTorch Geometric.
-- **Key Concepts:**
-  - **Graph Representation:** Learn how graphs are represented in PyG, using node features, edge indices, and edge features.
-  - **Message Passing:** Understand how GNNs aggregate and update node representations through message passing.
-  - **Layer Implementations:** See implementations of popular layers such as Graph Convolutional Networks (GCNConv), GraphSAGE, and Graph Isomorphism Networks (GINConv).
-- **Labs:**
-  - **Vertex Classification:** Apply GCN and your own implementation of GraphSAGE on the Cora dataset.
-  - **Graph Classification:** Implement GIN with various aggregation functions (SUM/MEAN/MAX) for tasks like classifying IMDB graphs.
-
-### 2. AI for Materials: Graph Neural Networks for Material Property Prediction
-- **Application Focus:**
-  - Use GNNs to predict material properties such as dipole moments, formation energy, or band gap.
-  - Leverage the QM9 dataset, a common molecular graph benchmark in materials science.
-- **Tutorial Highlights:**
-  - **Dataset Loading:** How to load and preprocess the QM9 dataset using PyG’s built-in utilities.
-  - **Model Building:** Design a Graph Convolutional Network (GCN) that computes node embeddings and aggregates them into graph-level representations with global mean pooling.
-  - **Regression Task:** Train the GCN model to predict a target material property (e.g., dipole moment) using mean squared error (MSE) loss.
-  - **Training and Evaluation:** A tailored training loop with evaluation on validation and test splits, demonstrating how GNNs can effectively regress material properties.
-
----
-
-## Environment
-
-To run these tutorials, you will need:
-- **Libraries:** PyTorch (>=1.10), PyTorch Geometric, and supporting packages.
-- **Hardware:** GPU support is strongly recommended to accelerate model training.
+License information is available in the repository LICENSE. Datasets and dependencies retain their own terms.

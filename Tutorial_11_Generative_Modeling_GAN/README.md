@@ -1,33 +1,23 @@
-# Generative Modeling with GANs
+# Tutorial 11 GANs: Generation and Image Translation
 
-This repository offers two comprehensive tutorials on Generative Adversarial Networks (GANs) implemented using TensorFlow and PyTorch. Both tutorials guide you through building, training, and evaluating GANs for various generative modeling tasks in materials science, while also addressing key AI for materials topics.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PEESEgroup/SysEn6888/blob/main/Tutorial_11_Generative_Modeling_GAN/tutorial_11_pytorch.ipynb)
 
-## Tutorials Overview
+Run the notebook from the top in Colab. Dependencies install inside the runtime; no local environment, API key, Drive mount, or pretrained model is required.
 
-### 1. TensorFlow GAN Tutorial
-- **File**: `Tutorial#11 (tf) Generative Modeling GAN.ipynb`
-- **Description**: This notebook covers the implementation of GANs using TensorFlow. It introduces key concepts, the architectural design of GANs, and effective training strategies for generative modeling with applications in materials science.
-- **Requirements**:
-  - Python 3.7 or higher
-  - TensorFlow 2.x
-  - NumPy, Matplotlib
-- **AI for Materials Focus**: Although the primary focus is on general generative modeling, this tutorial outlines how these techniques can be adapted for materials data analysis.
+## What you will learn
 
-### 2. PyTorch GAN Tutorial
-- **File**: `Tutorial#11 (torch) Generative Modeling GAN.ipynb`
-- **Description**: This notebook provides a detailed implementation of GANs using PyTorch. It demonstrates similar GAN concepts as the TensorFlow version but leverages PyTorch’s dynamic computation graph and custom training loops.
-- **Special Note**: The dataset used in this tutorial is based on material electron microscopy data, providing real-world images ideal for training and evaluating generative models in the context of AI for materials.
-- **Requirements**:
-  - Python 3.7 or higher
-  - PyTorch 1.x or later
-  - NumPy, Matplotlib
+- A compact convolutional GAN with explicit discriminator/generator update checks.
+- Fixed-noise samples and a training GIF, latent interpolation, and frozen-generator inversion.
+- Paired edge-to-digit translation with a U-Net skip connection and patch discriminator.
+- Unpaired ordinary/inverted digit translation with adversarial, cycle, and identity losses.
+- Baselines, held-out diagnostics, CSV exports, and reload-and-inference examples for all eight saved networks.
 
-## 3. AI for Materials
-- **Generative Modeling in Materials Science**: Techniques for simulating and analyzing material microstructures.
-- **Material Electron Microscopy Data**: Utilizing real-world microscopy images to train and validate models.
-- **Integrating Deep Learning in Materials Research**: Approaches for leveraging GANs to accelerate discovery and analysis in materials science.
+Default quick mode trains on MNIST in a CPU-compatible workflow: twelve DCGAN epochs, four paired epochs, and four unpaired epochs. Download is about 12 MB. Results are short teaching runs, not quality or convergence guarantees. `QUICK_RUN=False` increases data and epochs; optional GPU selection is automatic.
 
-## Acknowledgments
-- François Chollet
-- [TensorFlow](https://www.tensorflow.org/)
-- [PyTorch](https://pytorch.org/)
+## Scope
+
+This reworks the upstream PyTorch GAN lesson into one independent notebook. Small MNIST translation tasks replace facades and horse/zebra datasets; networks and schedules are simplified. It is not a reproduction of pix2pix or CycleGAN benchmark results. The known inversion target is used only for final diagnostics; training pools for unpaired domains have disjoint source rows. Low adversarial/cycle loss does not prove realistic or semantically correct generation.
+
+Outputs are written to `outputs/tutorial_11/`; download them before Colab disconnects. Model files are inference snapshots rather than exact resume checkpoints. See [validation evidence](../docs/validation.md) for tested modes and observed limitations.
+
+License information is available in the repository LICENSE.

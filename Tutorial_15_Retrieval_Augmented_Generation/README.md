@@ -1,63 +1,29 @@
-# Retrieval Augmented Generation (RAG)
+# Tutorial 15 Retrieval-Augmented Generation
 
-This tutorial provides an in-depth guide on building applications using Retrieval Augmented Generation (RAG) to enhance the capabilities of large language models (LLMs). By incorporating external knowledge retrieval, RAG addresses the inherent limitations of LLMs—enabling them to answer questions that extend beyond the scope of their pre-training data.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PEESEgroup/SysEn6888/blob/main/Tutorial_15_Retrieval_Augmented_Generation/tutorial_15_pytorch.ipynb)
 
----
+**Verified on Colab CPU (2026-10-18):** All nine code cells and index checks passed; four figures were inspected. Dense/TF-IDF Hit@1 was 7/8 and 6/8, with Hit@3 of 8/8 for both. Generation remained weak: content probes 1/4, valid citation IDs 0/4, exact abstention 1/2. Raw failures and their interpretation are retained.
 
-## 1. Overview
+Open in Colab, connect to a CPU runtime, and choose **Runtime → Run all**. Setup installs missing packages, fetches a web article, and downloads public model weights. No local environment, API key, paid inference service, or Drive mount is required.
 
-Large language models such as GPT-4 and Llama-2 are highly proficient at generative reasoning; however, they are limited by the fixed dataset on which they were trained. RAG overcomes these constraints by dynamically retrieving information from external sources, thus augmenting the model’s knowledge. This process opens up new avenues for answering domain-specific queries accurately and in real time.
+## What you will learn
 
-In this tutorial, you will learn how to create applications that combine RAG techniques with various LangChain components to build pipelines that can retrieve relevant information and generate context-aware responses.
+- Load a real article and preserve source IDs, metadata, offsets, and hashes.
+- Visualize chunk overlap and embedding similarity.
+- Compare TF-IDF search with 384-dimensional MiniLM embeddings implemented in PyTorch.
+- Apply explicit metadata filters and inspect top-k evidence.
+- Compare local Qwen answers with and without retrieval.
+- Evaluate retrieval, answer content probes, citation IDs, and abstention separately.
+- Inspect pipeline step events and save/reload a dense index with a provenance manifest.
 
----
+## Resources and scope
 
-## 2. Key Components
+Public MiniLM and Qwen checkpoints download about 1.1 GB in total. CPU float32 inference needs several GB of RAM; download and execution time vary. `QUICK_RUN=False` increases generation length. No training is performed.
 
-The tutorial demonstrates the use of several essential components:
+The materials records are **fictional teaching data**, not scientific measurements. The article is downloaded from [Lilian Weng's site](https://lilianweng.github.io/posts/2023-06-23-agent/) at runtime and is not committed. Source changes can alter retrieval; the run records its content hash.
 
-- **LangChain Framework**: A comprehensive toolkit for building applications that leverage LLMs.
-- **LangSmith Integration**: A robust platform for debugging and optimizing multi-step workflows, enabling inspection of detailed execution traces.
-- **Vector Stores**: Efficient storage and retrieval mechanisms for document embeddings, making it possible to quickly locate the most relevant pieces of information.
+This adaptation replaces paid upstream API calls with local models and uses plain Python for the retrieval/generation flow. LangGraph, LangSmith, token streaming, asynchronous execution, and LLM query rewriting are outside this lesson. A valid citation ID does not establish factual support; the small model can ignore evidence or fail to abstain. GPU and longer mode need separate validation.
 
-By integrating these components, you will learn how to build systems that not only reason with LLMs but also dynamically incorporate up-to-date external knowledge.
+Download `outputs/tutorial_15/` before disconnecting. It contains plots, chunk metadata, vectors, the manifest, raw answers, diagnostic CSVs, and `run_summary.json`. Source-document and model licenses remain separate from the code license. See [validation evidence](../docs/validation.md).
 
----
-
-## 3. Features
-
-- **Installation Instructions**: Step-by-step guidance on installing the required dependencies using either Pip or Conda.
-- **LangSmith Logging**: Setup instructions for enabling trace logging to facilitate debugging and performance optimization.
-- **Practical RAG Pipeline Example**: A comprehensive walkthrough of building a RAG pipeline, where document retrieval is combined with LLM generation to answer specific questions.
-
----
-
-## 4. Example Workflow
-
-In the tutorial, you will explore a practical workflow that includes:
-
-1. **Document Loading and Preprocessing**: Learn how to ingest content from a webpage or dataset by leveraging LangChain’s document loader, ensuring that only the relevant content is extracted and cleaned.
-2. **Text Splitting**: Understand the process of dividing lengthy documents into smaller, manageable chunks using techniques such as recursive character splitting. This step ensures that each text segment is sized appropriately for efficient retrieval and processing.
-3. **Indexing with Vector Stores**: Discover how to embed text chunks and index them using vector stores, which allows for rapid similarity searches when processing user queries.
-4. **Retrieval and Generation Pipeline**: Assemble a workflow that first retrieves the most pertinent document snippets based on a user’s query and then generates a comprehensive answer using the augmented context.
-5. **Execution and Testing**: Execute the complete pipeline to observe how the system retrieves relevant context and synthesizes informative responses.
-
----
-
-## 5. AI for Materials: Retrieval Augmented Generation for Material Property QA
-
-In the context of materials science, RAG can be a transformative tool. Researchers frequently need to query vast databases of research articles, experimental reports, and technical datasheets for up-to-date information about material properties such as band gaps, processing temperatures, or chemical stability.
-
-This tutorial highlights how to build a RAG application tailored for materials science:
-
-- **Custom Materials Dataset**: Learn how to create and index a dataset containing technical notes, research articles, or datasheet excerpts about various materials.
-- **Domain-Specific Retrieval**: Implement techniques to retrieve the most relevant document chunks based on queries regarding material properties, ensuring that the retrieval process focuses on the materials science domain.
-- **Context-Aware Generation**: Use the retrieved context to generate precise, informed answers about material properties. This supports applications such as automated technical support, materials discovery, or research synthesis.
-- **Impact on Materials Research**: By leveraging RAG, researchers can significantly accelerate materials discovery and enhance their analytical capabilities, reducing experimental costs and streamlining decision-making processes.
-
----
-
-## Acknowledgments
-
-- This tutorial was inspired by the work demonstrated in the [RAG application notebook by Ray Project](https://github.com/ray-project/llm-applications/blob/main/notebooks/rag.ipynb).
-- We extend our gratitude to the LangChain and LangSmith teams for providing the frameworks and tools that simplify the development of advanced LLM-based applications.
+License information is available in the repository LICENSE.

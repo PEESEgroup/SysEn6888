@@ -1,45 +1,22 @@
-# Deep Reinforcement Learning
+# Tutorial 12 Deep Reinforcement Learning
 
-This repository contains comprehensive tutorials on Deep Reinforcement Learning (DRL) implemented in both TensorFlow and PyTorch. In addition to classic control tasks such as CartPole and the Inverted Pendulum, these tutorials demonstrate how DRL methods can be applied to real-world problems such as materials design. Leveraging state-of-the-art techniques—including Actor-Critic methods, Deep Deterministic Policy Gradient (DDPG), and more—these guides are ideal for researchers and practitioners looking to bridge theory and practice in reinforcement learning.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PEESEgroup/SysEn6888/blob/main/Tutorial_12_Deep_Reinforcement_Learning/tutorial_12_pytorch.ipynb)
 
-## Tutorials Overview
+Run from the top in Colab. The notebook installs missing packages, uses PyTorch and Gymnasium, and renders policy GIFs without Xvfb or local setup. No datasets, Atari ROMs, API keys, or Drive mount are required.
 
-### 1. **TensorFlow Implementation**
-- **Notebook**: `Tutorial#12 (tf) Deep Reinforcement Learning.ipynb`
-- **Description**: This tutorial introduces fundamental DRL concepts using TensorFlow. Topics include:
-  - Environment and agent definition.
-  - Q-Learning and Deep Q-Networks (DQN).
-  - Training, evaluation, and performance analysis.
-- **Prerequisites**: Familiarity with TensorFlow, Python, and basic reinforcement learning concepts.
-- **AI for Materials Focus**: In addition to classical control tasks, this tutorial provides an introduction on how DRL techniques can be adapted to address materials design challenges, preparing you to explore materials science applications.
+## Included workflows
 
-### 2. **PyTorch Implementation**
-- **Notebook**: `Tutorial#12 (torch) Deep Reinforcement Learning.ipynb`
-- **Description**: This guide demonstrates DRL using PyTorch. In this tutorial you will:
-  - Set up environments and agents for classic tasks (e.g., CartPole and Inverted Pendulum).
-  - Explore various DRL algorithms including Actor-Critic methods and DDPG.
-  - Fine-tune the models through hands-on debugging and performance tuning.
-- **Prerequisites**: Basic knowledge of PyTorch, Python, and reinforcement learning fundamentals.
-- **AI for Materials Focus**: This tutorial is geared towards extending DRL applications to materials science, featuring methods that can be adapted for designing and optimizing material properties.
+- CartPole-v1 stochastic actor–critic with bootstrapped episodic returns and a detached learned baseline.
+- Pendulum-v1 DDPG with replay, bounded continuous actions, exploration, and soft target updates.
+- Simplex-constrained synthetic materials composition control, using DDPG and an analytic baseline.
+- Separate evaluation seeds, random/initial/simple baselines, seven plots, two policy GIFs, and nine CPU network reload checks.
 
-### 3. **AI for Materials: Reinforcement Learning Applications in Material Science**
-- **Overview**: 
-  - This section showcases a custom OpenAI Gym environment for materials design, where the goal is to optimize material compositions by adjusting component ratios and synthesis parameters.
-  - The tutorial demonstrates how to integrate DRL (using an Actor-Critic method) into material science applications.
-- **Key Highlights**:
-  - **Custom Environment**: Learn how to create a custom Gym environment that simulates materials design, featuring continuous state and action spaces.
-  - **Continuous Action Spaces**: Understand how to scale and adjust continuous outputs from DRL agents—an essential capability for tackling real-world design problems in materials science.
-  - **Advanced Techniques**: Gain insights into designing realistic reward functions and utilizing state-of-the-art exploration techniques that are directly applicable to AI-driven material discovery.
-  - **Extensions**: Explore ideas for combining DRL with high-throughput experiments and simulation outputs, opening new avenues for innovation in materials design.
+Quick mode uses 240 CartPole episodes, 6,000 Pendulum steps, 4,000 materials steps, and 10 evaluation seeds per policy. CPU is supported; expect several minutes, with actual timing depending on the runtime. `QUICK_RUN=False` increases training/evaluation budgets. GPU is selected automatically when available.
 
-## Resources
+## Interpretation
 
-- [OpenAI Gym Documentation](https://www.gymlibrary.dev/)
-- [Spinning Up in Deep Reinforcement Learning by OpenAI](https://spinningup.openai.com/)
-- [Deep Reinforcement Learning Papers and Guides](https://www.deepmind.com/research)
+Short runs verify algorithms and interfaces; they do not guarantee solved environments or robust policies. Only one training seed per task is used by default. The materials task is a known-target numerical example, not physical material discovery. DQN/Atari and PPO are conceptual extensions, matching their outline-only status in the upstream PyTorch notebook.
 
-## Acknowledgments
+Outputs are saved in `outputs/tutorial_12/`. Checkpoints are for inference/inspection rather than exact training resumption. See [validation evidence and tested modes](../docs/validation.md).
 
-- François Chollet for contributions to deep learning and DRL pedagogy.
-- The TensorFlow and PyTorch communities for their extensive documentation and support.
-- Researchers and practitioners who continually push forward the field of AI for Materials Design.
+License information is available in the repository LICENSE.

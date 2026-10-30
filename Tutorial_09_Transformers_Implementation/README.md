@@ -1,49 +1,16 @@
-# Transformers Implementation
+# Tutorial 09 Encoder–Decoder Transformers
 
-This tutorial demonstrates how to implement a Transformer model using both TensorFlow and PyTorch. It covers all steps from data preprocessing to training and inference for a language translation task.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PEESEgroup/SysEn6888/blob/main/Tutorial_09_Transformers_Implementation/tutorial_09_pytorch.ipynb)
 
-## Table of Contents
-- Introduction
-- Setup
-- The Data
-  - Download and Prepare the Dataset
-  - Create a Dataset (`tf.data` for TensorFlow and standard PyTorch Dataset)
-- Text Preprocessing
-  - Standardization
-  - Text Vectorization
-  - Process the Dataset
-- Model Components
-  - The Encoder
-  - The Attention Layer
-  - The Decoder
-- Training
-  - Training the Model
-  - Inference
-  - Exporting the Model
-- Optional
-  - Using a Dynamic Loop (TensorFlow only)
-- Additional Resources
+Build a small PyTorch Spanish → English Transformer with explicit encoder/decoder blocks, sinusoidal positions, causal and padding masks, teacher forcing, and greedy decoding.
 
-## Introduction
-This tutorial provides side-by-side implementations of Transformers using TensorFlow and PyTorch, showcasing their unique features and APIs.
+- Includes environment setup and automatic 2.6 MB ManyThings/Tatoeba snapshot download. No local installation, TensorFlow, torchtext, API key, or Drive mount.
+- Quick mode: 3,000/400/400 short train/validation/test pairs, one encoder and decoder layer, dimension 64, four heads, and six epochs.
+- Larger mode: 12,000/1,500/1,500 short pairs and 15 epochs. GPU and larger mode need separate validation.
+- Five figures explain IDs/padding, causal attention, positions, learning curves, and trained attention heads.
+- Checks cover future-token leakage, padding invariance, special tokens, EOS termination, masked loss, and CPU checkpoint reload.
+- Teacher-forced accuracy is not translation accuracy. Held-out greedy examples and strict exact match expose free-running limitations.
 
-- **TensorFlow**: Inspired by the official [TensorFlow Transformer tutorial](https://www.tensorflow.org/text/tutorials/transformer).
-- **PyTorch**: Implements similar concepts using PyTorch's flexible API.
+The upstream lesson uses GRUs plus attention despite its title; this adaptation implements an actual Transformer. Small teaching runs are not production translators.
 
-## Getting Started
-1. **Environment Setup**: Ensure you have TensorFlow or PyTorch installed based on the framework you plan to use.
-2. **Follow the Sections**: Start from data preparation, proceed through preprocessing, build the model, and train it.
-3. **Experiment with Both Frameworks**: Compare TensorFlow's `tf.data` pipeline and PyTorch's Dataset class to understand their respective advantages.
-
-## Highlights
-- **TensorFlow**: Provides dynamic loops and seamless data pipelines using `tf.data`.
-- **PyTorch**: Offers greater flexibility and is highly customizable, with a focus on hands-on control.
-
-## Additional Resources
-- TensorFlow Users: Visit the [official TensorFlow tutorials](https://www.tensorflow.org/text/tutorials) for more.
-- PyTorch Users: Explore the [PyTorch documentation](https://pytorch.org/docs/stable/index.html) for further reading.
-
-## Acknowledgments
-- François Chollet
-- Tensorflow.org
-- pytorch.org
+[Series index](../README.md) · [Validation evidence](../docs/validation.md).

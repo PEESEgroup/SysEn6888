@@ -1,77 +1,16 @@
+# Tutorial 07 Object Detection and Instance Segmentation
 
-# Object Detection and Segmentation with PyTorch
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PEESEgroup/SysEn6888/blob/main/Tutorial_07_Object_Detection_and_Segmentation/tutorial_07_pytorch.ipynb)
 
-This tutorial provides a comprehensive guide to performing object detection and segmentation using PyTorch and YOLO (You Only Look Once). The notebook walks through image preprocessing, object detection, instance segmentation, and result visualization.
+A self-contained PyTorch-backed YOLO11 lesson. Setup runs inside Colab; no local installation, API key, repository clone, or Drive mount is needed.
 
-## Table of Contents
-1. [Introduction](#introduction)
-2. [Requirements](#requirements)
-3. [Setup](#setup)
-4. [Object Detection](#object-detection)
-5. [Instance Segmentation](#instance-segmentation)
-6. [Results](#results)
+- Compare the original image, detection boxes, instance masks, and a binary mask.
+- Explore confidence and actual NMS IoU controls, including a hand-checkable toy example.
+- Export/reload CSV boxes and NPZ masks; handle empty results safely.
+- Inspect YOLO annotations/YAML, run five training epochs on COCO128, and reload the resulting detector.
 
----
+Defaults: CPU supported, image size 320, `RUN_TRAINING=True`, five epochs, ten training/four validation images. Set `RUN_TRAINING=False` to skip training. Two nano weights total approximately 12 MB; COCO128 is approximately 7 MB. The pinned Ultralytics package installs automatically. Outputs go to `outputs/tutorial_07/`.
 
-## Introduction
+COCO128 is a **pipeline smoke test**, not an independent benchmark: its images come from COCO training data used for pretraining. No detection accuracy is inferred from unlabelled example images. Larger/GPU experiments require separate verification.
 
-Object detection answers the question, "What is in the image?" This tutorial uses YOLO for efficient and accurate detection and segmentation. For more details, watch this [YouTube Video](https://youtu.be/lxLyLIL7OsU).
-
----
-
-## Requirements
-
-Install the necessary libraries before starting:
-- `ultralytics` (latest version)
-- `torch`
-- `numpy`
-- `Pillow`
-- `matplotlib`
-
-```bash
-pip install ultralytics torch numpy Pillow matplotlib
-```
-
----
-
-## Setup
-
-1. Load and preprocess images using the provided helper functions.
-2. Utilize YOLO models for detection and segmentation.
-3. Configure confidence and IoU thresholds for better accuracy.
-
----
-
-## Object Detection
-
-1. **Preparing the Image**: Load and preprocess input images.
-2. **Performing Detection**: Use a pretrained YOLO model to detect objects.
-3. **Visualizing Results**: Overlay bounding boxes, labels, and confidence scores on the input image.
-
----
-
-## Instance Segmentation
-
-1. **Performing Segmentation**: Extract instance masks, bounding boxes, and labels.
-2. **Visualizing Segmentation**: Save and display results with segmentation overlays.
-
-Key function:
-```python
-def perform_segmentation(model, image):
-    # Perform instance segmentation on the input image
-    pass
-```
-
----
-
-## Results
-
-All detection and segmentation results, including processed images, will be saved for further analysis. The tutorial also demonstrates how to adjust thresholds to refine the outcomes.
-
----
-
-## Acknowledgments
-
-This tutorial uses YOLO via the `ultralytics` package and integrates PyTorch for efficient computation.
-
-For questions or suggestions, feel free to contribute or reach out!
+[Validation evidence](../docs/validation.md) · [Series index](../README.md). Attribution and separate software/model/data terms are linked in the notebook.
